@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -19,12 +20,23 @@ public class Main extends Application {
                 new PrimerLight().getUserAgentStylesheet()
         );
 
-        Button button = new Button("Hello JavaFX + AtlantaFX");
-        button.setStyle("-fx-background-radius: 0px;");
-        button.setPrefWidth(200);
-        button.setPrefHeight(50);
+        StackPane window = new StackPane();
+        GridPane buttongrid = new GridPane();
 
-        StackPane window = new StackPane(button);
+        // ACCOUNTING BUTTON
+        Button acc = new Button("Accounting");
+        acc.setStyle("-fx-background-radius: 0px;");
+        acc.setPrefSize(400, 80);
+
+        // SUGAR BUTTON
+        Button sug = new Button("Sugar");
+        sug.setStyle("-fx-background-radius: 0px;");
+        sug.setPrefSize(400, 80);
+
+        window.getChildren().addAll(acc, sug);
+
+        // buttongrid.add(acc, 0, 0);
+        // buttongrid.add(sug, 1, 0);
 
         Scene scene = new Scene(window, 1280, 720);
 
