@@ -18,6 +18,10 @@ public class Acc_menu {
         Button journal = new Button("Journal");
         journal.setStyle("-fx-background-radius: 0px;");
         journal.setPrefSize(400, 80);
+        journal.setOnAction(event -> {
+            Acc_cvent cvent = new Acc_cvent();
+            cvent.show(mainstage);
+        });
 
         // LEDGER
         Button ledger = new Button("Ledger");
@@ -38,14 +42,14 @@ public class Acc_menu {
         buttonscene.setPrefSize(1280, 720);
         buttonscene.setAlignment(Pos.CENTER);   
         
-        // ACC SCENE
+        // ACC MENU SCENE
         Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
         double width = screenBounds.getWidth();
         double height = screenBounds.getHeight();
 
         Scene acc_scene = new Scene(buttonscene, width, height);
 
-        // LOAD ACC SCENE
+        // LOAD ACC MENU SCENE
         mainstage.setScene(acc_scene); 
     }
 }
