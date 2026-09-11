@@ -17,17 +17,17 @@ public class Acc_menu {
         // JOURNAL
         Button journal = new Button("Journal");
         journal.setStyle("-fx-background-radius: 0px;");
-        journal.setPrefSize(400, 70);
+        journal.setPrefSize(400, 80);
 
         // LEDGER
         Button ledger = new Button("Ledger");
         ledger.setStyle("-fx-background-radius: 0px;");
-        ledger.setPrefSize(400, 70);
+        ledger.setPrefSize(400, 80);
 
         // ANALYSIS
         Button analysis = new Button("Analysis");
         analysis.setStyle("-fx-background-radius: 0px;");
-        analysis.setPrefSize(400, 70);
+        analysis.setPrefSize(400, 80);
 
         //////////////////////////////////////////////////////////////
         // SCENES/FRAMES                                            //
