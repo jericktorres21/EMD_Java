@@ -38,7 +38,7 @@ public class Acc_menu {
         //////////////////////////////////////////////////////////////
         
         // BUTTON SCENE
-        VBox buttonscene = new VBox(10, journal, ledger, analysis);
+        VBox buttonscene = new VBox(5, journal, ledger, analysis);
         buttonscene.setPrefSize(1280, 720);
         buttonscene.setAlignment(Pos.CENTER);   
         

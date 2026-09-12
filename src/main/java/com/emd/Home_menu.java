@@ -43,7 +43,7 @@ public class Home_menu {
         //////////////////////////////////////////////////////////////        
 
         // BUTTON SCENE
-        VBox buttonscene = new VBox(10, acc, sug, dat, others);
+        VBox buttonscene = new VBox(5, acc, sug, dat, others);
         buttonscene.setPrefSize(1280, 720);
         buttonscene.setAlignment(Pos.CENTER);      
 
