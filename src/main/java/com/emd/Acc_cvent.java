@@ -44,7 +44,7 @@ public class Acc_cvent {
         // DATE
         TextField date_entry = new TextField();
         date_entry.setStyle(
-            "-fx-font-size: 12px;" +
+            "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
@@ -54,7 +54,7 @@ public class Acc_cvent {
         // CHECK VOUCHER NO.
         TextField cv_numentry = new TextField();
         cv_numentry.setStyle(
-            "-fx-font-size: 12px;" +
+            "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
@@ -64,7 +64,7 @@ public class Acc_cvent {
         // CHECK NO.
         TextField check_entry = new TextField();
         check_entry.setStyle(
-            "-fx-font-size: 12px;" +
+            "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
@@ -74,17 +74,18 @@ public class Acc_cvent {
         // CHECK AMOUNT
         TextField check_amtentry = new TextField();
         check_amtentry.setStyle(
-            "-fx-font-size: 12px;" +
+            "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
         );
         check_amtentry.setAlignment(Pos.CENTER);
+        check_amtentry.setText("0.00");
         check_amtentry.setPrefSize(90, 23);
         // PAYEE
         TextField payee_entry = new TextField();
         payee_entry.setStyle(
-            "-fx-font-size: 12px;" +
+            "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
@@ -93,7 +94,7 @@ public class Acc_cvent {
         // GENERAL EXPLANATION
         TextField gen_expentry = new TextField();
         gen_expentry.setStyle(
-            "-fx-font-size: 12px;" +
+            "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
@@ -133,7 +134,7 @@ public class Acc_cvent {
         // CODE
         TextField code_entry = new TextField();
         code_entry.setStyle(
-            "-fx-font-size: 12px;" +
+            "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
@@ -143,35 +144,38 @@ public class Acc_cvent {
         // ACCOUNT TITLE
         TextField title_entry = new TextField();
         title_entry.setStyle(
-            "-fx-font-size: 12px;" +
+            "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
         );
-        title_entry.setPrefSize(350, 23);
+        title_entry.setEditable(true);
+        title_entry.setPrefSize(310, 23);
         // DEBIT
         TextField debit_entry = new TextField();
         debit_entry.setStyle(
-            "-fx-font-size: 12px;" +
+            "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
         );
         debit_entry.setAlignment(Pos.CENTER_RIGHT);         
+        debit_entry.setText("0.00");         
         debit_entry.setPrefSize(90, 23);         
         // CREDIT
         TextField credit_entry = new TextField();
         credit_entry.setStyle(
-            "-fx-font-size: 12px;" +
+            "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
         );
         credit_entry.setAlignment(Pos.CENTER_RIGHT);   
+        credit_entry.setText("0.00");   
         credit_entry.setPrefSize(90, 23);
         TextField hda_entry = new TextField();
         hda_entry.setStyle(
-            "-fx-font-size: 12px;" +
+            "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
@@ -181,17 +185,16 @@ public class Acc_cvent {
         // EXPLANATION
         TextField explanation_entry = new TextField();
         explanation_entry.setStyle(
-            "-fx-font-size: 12px;" +
+            "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
         );
-        explanation_entry.setAlignment(Pos.CENTER); 
         explanation_entry.setPrefSize(350, 23);
         // SUB-CATEGORY
         TextField sub_entry = new TextField();
         sub_entry.setStyle(
-            "-fx-font-size: 12px;" +
+            "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
@@ -211,8 +214,48 @@ public class Acc_cvent {
             "-fx-background-radius: 0px;"
         );
         new_payee.setPrefSize(25, 23);
-        VBox.setMargin(new_payee, new Insets(0, 0, 79, 0));        
+        VBox.setMargin(new_payee, new Insets(0, 0, 79, 0));   
         
+        // ADD NEW HACIENDA
+        Button new_hda = new Button("Add Hacienda");
+        new_hda.setStyle(
+            "-fx-font-size: 12px;" +
+            "-fx-padding: 0px 0px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        new_hda.setPrefSize(100, 40);
+
+        // ADD NEW ACCOUNT TITLE
+        Button new_title = new Button("Add New Account");
+        new_title.setStyle(
+            "-fx-font-size: 12px;" +
+            "-fx-padding: 0px 0px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        new_title.setPrefSize(120, 40);
+
+        // VIEW CHECK VOUCHER
+        Button view_cv = new Button("View Check Voucher");
+        view_cv.setStyle(
+            "-fx-font-size: 12px;" +
+            "-fx-padding: 0px 0px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        view_cv.setPrefSize(130, 40);
+        
+        // ADD NEW PAGE
+        Button new_record = new Button("Add Record");
+        new_record.setStyle(
+            "-fx-font-size: 12px;" +
+            "-fx-padding: 0px 0px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        new_record.setPrefSize(100, 40);        
+
         // SAVE RECORD BUTTON
         Button save_record = new Button("Save Record");
         save_record.setStyle(
@@ -223,6 +266,16 @@ public class Acc_cvent {
         );
         save_record.setPrefSize(100, 40);
 
+        // DELETE PAGE BUTTON
+        Button delete_page = new Button(" ");
+        delete_page.setStyle(
+            "-fx-font-size: 12px;" +
+            "-fx-padding: 0px 0px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        delete_page.setPrefSize(45, 40);
+
         //////////////////////////////////////////////////////////////
         // VBOX/HBOX/SCENES                                         //
         //////////////////////////////////////////////////////////////
@@ -230,7 +283,7 @@ public class Acc_cvent {
         // INFO WIDGETS
         // LABEL INFO BOX 1
         VBox info_labels1 = new VBox(
-            8, 
+            9, 
             date, 
             cv_num, 
             check,
@@ -248,7 +301,7 @@ public class Acc_cvent {
         info_entrybox1.setAlignment(Pos.CENTER);
         // LABEL INFO BOX 2
         VBox info_labels2 = new VBox(
-            8, 
+            9, 
             payee,
             gen_explanation
         );
@@ -309,10 +362,28 @@ public class Acc_cvent {
 
         //////////////////////////////////////////////////////////////
         
+        // BUTTON VBOX 1
+        HBox buttonbox_1 = new HBox(
+            4,
+            new_hda,
+            new_title
+        );
+        buttonbox_1.setAlignment(Pos.CENTER);
+
+        // BUTTON VBOX 2
+        HBox buttonbox_2 = new HBox(
+            4,
+            view_cv,
+            new_record,
+            save_record
+        );
+        
         // BUTTON WIDGETS 
         HBox buttonbox = new HBox(
-            5,
-            save_record
+            40,
+            buttonbox_1,
+            buttonbox_2,
+            delete_page
         );
         buttonbox.setAlignment(Pos.CENTER);
         VBox.setMargin(buttonbox, new Insets(30, 0, 0, 0));
