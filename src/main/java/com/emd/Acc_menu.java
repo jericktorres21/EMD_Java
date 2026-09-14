@@ -47,9 +47,9 @@ public class Acc_menu {
         double width = screenBounds.getWidth();
         double height = screenBounds.getHeight();
 
-        Scene acc_scene = new Scene(buttonscene, width, height);
+        Scene acc_menuscene = new Scene(buttonscene, width, height);
 
         // LOAD ACC MENU SCENE
-        mainstage.setScene(acc_scene); 
+        mainstage.setScene(acc_menuscene); 
     }
 }

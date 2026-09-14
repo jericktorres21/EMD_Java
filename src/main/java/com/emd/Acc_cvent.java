@@ -235,6 +235,7 @@ public class Acc_cvent {
             "-fx-background-radius: 0px;"
         );
         new_title.setPrefSize(120, 40);
+        // new_title.setOnAction(event -> Acc_addacc.show());
 
         // VIEW CHECK VOUCHER
         Button view_cv = new Button("View Check Voucher");
@@ -280,7 +281,7 @@ public class Acc_cvent {
         // VBOX/HBOX/SCENES                                         //
         //////////////////////////////////////////////////////////////
         
-        // INFO WIDGETS
+        // INFO BOXES
         // LABEL INFO BOX 1
         VBox info_labels1 = new VBox(
             9, 
@@ -400,11 +401,11 @@ public class Acc_cvent {
         double width = screenBounds.getWidth();
         double height = screenBounds.getHeight();
 
-        Scene acc_scene = new Scene(mainbox, width, height);
+        Scene acc_cventscene = new Scene(mainbox, width, height);
 
         //////////////////////////////////////////////////////////////
 
         // LOAD ACC CV ENTRY SCENE
-        mainstage.setScene(acc_scene); 
+        mainstage.setScene(acc_cventscene); 
     }
 }
