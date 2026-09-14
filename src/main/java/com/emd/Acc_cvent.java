@@ -235,7 +235,7 @@ public class Acc_cvent {
             "-fx-background-radius: 0px;"
         );
         new_title.setPrefSize(120, 40);
-        // new_title.setOnAction(event -> Acc_addacc.show());
+        new_title.setOnAction(event -> new Acc_addacc().acc());
 
         // VIEW CHECK VOUCHER
         Button view_cv = new Button("View Check Voucher");
@@ -392,7 +392,7 @@ public class Acc_cvent {
         //////////////////////////////////////////////////////////////
 
         // MAIN BOX
-        VBox mainbox = new VBox(30, info_box, data_entbox, buttonbox);
+        VBox mainbox = new VBox(20, info_box, data_entbox, buttonbox);
 
         //////////////////////////////////////////////////////////////
 
@@ -406,6 +406,15 @@ public class Acc_cvent {
         //////////////////////////////////////////////////////////////
 
         // LOAD ACC CV ENTRY SCENE
-        mainstage.setScene(acc_cventscene); 
+        mainstage.setScene(acc_cventscene);
+        mainstage.setTitle("Check Voucher Entry");
+        mainstage.maximizedProperty().addListener(
+            (observable, wasMaximized, isMaximized) -> {
+                if (!isMaximized) {
+                    mainstage.setWidth(1280);
+                    mainstage.setHeight(720);
+                    mainstage.centerOnScreen();
+                }
+            });
     }
 }
