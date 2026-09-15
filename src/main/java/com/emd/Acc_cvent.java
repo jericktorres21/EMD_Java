@@ -291,6 +291,7 @@ public class Acc_cvent {
             "-fx-background-radius: 0px;"
         );
         new_hda.setPrefSize(100, 40);
+        new_hda.setOnAction(event -> new Acc_addhda().show());
 
         // ADD NEW ACCOUNT TITLE
         Button new_title = new Button("Add New Account");

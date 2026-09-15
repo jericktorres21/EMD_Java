@@ -1,17 +1,16 @@
 package com.emd;
 
 import javafx.geometry.Insets;
-import javafx.stage.Stage;
-import javafx.scene.control.Label;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
+import javafx.stage.Stage;
 
-public class Acc_addacc {
+public class Acc_addhda {
     public void show() {
         //////////////////////////////////////////////////////////////
         // ENTRY WIDGETS                                            //
@@ -20,16 +19,16 @@ public class Acc_addacc {
         // LABELS
         // CODE
         Label code = new Label("Code");
-        code.setStyle("-fx-font-size: 12px;");
-        // ACCOUNT TITLE
-        Label title = new Label("Account Title");
-        title.setStyle("-fx-font-size: 12px;");
-        // NATURE
-        Label nature = new Label("Nature");
-        nature.setStyle("-fx-font-size: 12px;");
+        code.setStyle("-fx-font-size: 12px;"); 
+        // HACIENDA
+        Label hda = new Label("Hacienda");
+        hda.setStyle("-fx-font-size: 12px;");
+        // SHORTCUT
+        Label shortcut = new Label("Shortcut");
+        shortcut.setStyle("-fx-font-size: 12px;");
 
-        //////////////////////////////////////////////////////////////
-
+        //////////////////////////////////////////////////////////////   
+        
         // ENTRY BOXES
         // CODE
         TextField code_entry = new TextField();
@@ -40,48 +39,37 @@ public class Acc_addacc {
             "-fx-background-radius: 0px;"
         );
         code_entry.setAlignment(Pos.CENTER);
-        code_entry.setPrefSize(70, 23);
-        // TITLE
-        TextField title_entry = new TextField();
-        title_entry.setStyle(
+        code_entry.setPrefSize(50, 23);
+        code_entry.setMinSize(50, 23);
+        code_entry.setMaxSize(50, 23);
+        // HACIENDA
+        TextField hda_entry = new TextField();
+        hda_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
         );
-        title_entry.setPrefSize(350, 23);
-        // NATURE
-        ComboBox<String> nature_entry = new ComboBox<>();
-        nature_entry.getItems().addAll(
-            "Asset",
-            "Liability",
-            "Equity",
-            "Revenue",
-            "Expense"
-        );
-        nature_entry.setStyle(
+        hda_entry.setPrefSize(140, 23);
+        hda_entry.setMinSize(140, 23);
+        hda_entry.setMaxSize(140, 23);
+        // SHORTCUT
+        TextField shortcut_entry = new TextField();
+        shortcut_entry.setStyle(
             "-fx-font-size: 11px;" +
+            "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
-            "-fx-padding: 0px 0px;" +
             "-fx-background-radius: 0px;"
         );
-        nature_entry.getEditor().setStyle(
-            "-fx-border-color: transparent;" +
-            "-fx-padding: 0px 5px;" +
-            "-fx-background-insets: 0;" + 
-            "-fx-background-radius: 0px;" +
-            "-fx-border-width: 0px;"
-        );
-        nature_entry.getEditor().setAlignment(Pos.CENTER);
-        nature_entry.setEditable(true);         
-        nature_entry.setPrefSize(90, 23);
-        nature_entry.setMinSize(90, 23);
-        nature_entry.setMaxSize(90, 23);
+        shortcut_entry.setAlignment(Pos.CENTER);
+        shortcut_entry.setPrefSize(70, 23);
+        shortcut_entry.setMinSize(70, 23);
+        shortcut_entry.setMaxSize(70, 23);
 
         //////////////////////////////////////////////////////////////
-        // BUTTON WIDGETS                                           //
+        // ENTRY WIDGETS                                            //
         //////////////////////////////////////////////////////////////
-
+        
         // SAVE RECORD
         Button save_record = new Button("Save Record");
         save_record.setStyle(
@@ -90,8 +78,8 @@ public class Acc_addacc {
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
         );
-        save_record.setPrefSize(100, 40);
-
+        save_record.setPrefSize(130, 40); 
+        
         //////////////////////////////////////////////////////////////
         // VBOX/HBOX/SCENES                                         //
         //////////////////////////////////////////////////////////////
@@ -104,30 +92,30 @@ public class Acc_addacc {
             code_entry
         );
         // TITLE
-        VBox title_box = new VBox(
+        VBox hda_box = new VBox(
             3,
-            title,
-            title_entry 
+            hda,
+            hda_entry 
         );
-        VBox nature_box = new VBox(
+        VBox shortcut_box = new VBox(
             3,
-            nature,
-            nature_entry
+            shortcut,
+            shortcut_entry
         );
 
         // MAIN ENTRY BOX
-        HBox entry_box = new HBox(3, code_box, title_box, nature_box);
+        HBox entry_box = new HBox(3, code_box, hda_box, shortcut_box);
         entry_box.setAlignment(Pos.CENTER);
-        VBox.setMargin(entry_box, new Insets(20, 0, 0, 0));        
+        VBox.setMargin(entry_box, new Insets(20, 0, 0, 0));
 
-        //////////////////////////////////////////////////////////////        
+        //////////////////////////////////////////////////////////////
 
         // BUTTON BOXES
         HBox button_box = new HBox(3, save_record);
         button_box.setAlignment(Pos.CENTER);
         VBox.setMargin(button_box, new Insets(30, 0, 0, 0));
 
-        //////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////        
 
         // MAIN BOX
         VBox mainbox = new VBox(3, entry_box, button_box);
@@ -135,15 +123,15 @@ public class Acc_addacc {
         //////////////////////////////////////////////////////////////
 
         // ACC CV ENTRY SCENE
-        Scene addacc_scene = new Scene(mainbox, 580, 700);
+        Scene addhda_scene = new Scene(mainbox, 350, 400);
 
         //////////////////////////////////////////////////////////////  
          
-        Stage addacc_stage = new Stage();
+        Stage addhda_stage = new Stage();
 
         // LOAD ACC CV ENTRY SCENE
-        addacc_stage.setScene(addacc_scene);
-        addacc_stage.setTitle("Chart of Accounts");
-        addacc_stage.show();
+        addhda_stage.setScene(addhda_scene);
+        addhda_stage.setTitle("List of Haciendas");
+        addhda_stage.show();    
     }
 }
