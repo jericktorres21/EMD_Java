@@ -51,5 +51,6 @@ public class Acc_menu {
 
         // LOAD ACC MENU SCENE
         mainstage.setScene(acc_menuscene); 
+        mainstage.setTitle("Accounting Menu"); 
     }
 }

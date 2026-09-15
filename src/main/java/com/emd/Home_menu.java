@@ -56,5 +56,6 @@ public class Home_menu {
 
         // LOAD MAIN SCENE
         mainstage.setScene(mainscene);
+        mainstage.setTitle("EMD");
     }
 }

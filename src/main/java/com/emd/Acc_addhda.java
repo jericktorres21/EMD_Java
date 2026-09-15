@@ -122,14 +122,15 @@ public class Acc_addhda {
 
         //////////////////////////////////////////////////////////////
 
-        // ACC CV ENTRY SCENE
+        // ADD HACIENDA SCENE
         Scene addhda_scene = new Scene(mainbox, 350, 400);
 
         //////////////////////////////////////////////////////////////  
          
+        // ADD HACIENDA STAGE
         Stage addhda_stage = new Stage();
 
-        // LOAD ACC CV ENTRY SCENE
+        // LOAD STAGE
         addhda_stage.setScene(addhda_scene);
         addhda_stage.setTitle("List of Haciendas");
         addhda_stage.show();    

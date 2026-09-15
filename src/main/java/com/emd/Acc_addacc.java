@@ -134,14 +134,15 @@ public class Acc_addacc {
 
         //////////////////////////////////////////////////////////////
 
-        // ACC CV ENTRY SCENE
-        Scene addacc_scene = new Scene(mainbox, 580, 700);
+        // ADD ACCOUNTS SCENE
+        Scene addacc_scene = new Scene(mainbox, 590, 700);
 
         //////////////////////////////////////////////////////////////  
-         
+        
+        // ADD ACCOUNT STAGE
         Stage addacc_stage = new Stage();
 
-        // LOAD ACC CV ENTRY SCENE
+        // LOAD STAGE
         addacc_stage.setScene(addacc_scene);
         addacc_stage.setTitle("Chart of Accounts");
         addacc_stage.show();

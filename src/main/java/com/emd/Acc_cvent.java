@@ -280,7 +280,8 @@ public class Acc_cvent {
             "-fx-background-radius: 0px;"
         );
         new_payee.setPrefSize(25, 23);
-        VBox.setMargin(new_payee, new Insets(0, 0, 79, 0));   
+        VBox.setMargin(new_payee, new Insets(0, 0, 79, 0));  
+        new_payee.setOnAction(event -> new Acc_addpayee().show()); 
         
         // ADD NEW HACIENDA
         Button new_hda = new Button("Add Hacienda");
