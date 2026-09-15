@@ -11,6 +11,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.scene.control.ComboBox;
 
 public class Acc_cvent {
     public void show(Stage mainstage) {
@@ -51,6 +52,30 @@ public class Acc_cvent {
         );
         date_entry.setAlignment(Pos.CENTER);
         date_entry.setPrefSize(90, 23);
+        // REAL-TIME DATE FORMATTING
+        date_entry.textProperty().addListener((observable, oldValue, newValue) -> {
+            // Remove anything that isn't a number
+            String numbers = newValue.replaceAll("[^0-9]", "");
+            // Maximum of 8 digits: MMddyyyy
+            if (numbers.length() > 8) {
+                numbers = numbers.substring(0, 8);
+            }
+            StringBuilder formatted = new StringBuilder();
+            for (int i = 0; i < numbers.length(); i++) {
+                // Add / before day
+                if (i == 2 || i == 4) {
+                    formatted.append("/");
+                }
+
+                formatted.append(numbers.charAt(i));
+            }
+            // Prevent infinite listener loop
+            String result = formatted.toString();
+            if (!result.equals(newValue)) {
+                date_entry.setText(result);
+                date_entry.positionCaret(result.length());
+            }
+        });
         // CHECK VOUCHER NO.
         TextField cv_numentry = new TextField();
         cv_numentry.setStyle(
@@ -83,14 +108,24 @@ public class Acc_cvent {
         check_amtentry.setText("0.00");
         check_amtentry.setPrefSize(90, 23);
         // PAYEE
-        TextField payee_entry = new TextField();
+        ComboBox<String> payee_entry = new ComboBox<>();
         payee_entry.setStyle(
             "-fx-font-size: 11px;" +
-            "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
+            "-fx-padding: 0px 0px;" +
             "-fx-background-radius: 0px;"
         );
+        payee_entry.getEditor().setStyle(
+            "-fx-border-color: transparent;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-background-insets: 0;" + 
+            "-fx-background-radius: 0px;" +
+            "-fx-border-width: 0px;"
+        );
+        payee_entry.setEditable(true);
         payee_entry.setPrefSize(350, 23);
+        payee_entry.setMinSize(350, 23);
+        payee_entry.setMaxSize(350, 23);
         // GENERAL EXPLANATION
         TextField gen_expentry = new TextField();
         gen_expentry.setStyle(
@@ -142,15 +177,24 @@ public class Acc_cvent {
         code_entry.setAlignment(Pos.CENTER);
         code_entry.setPrefSize(70, 23);
         // ACCOUNT TITLE
-        TextField title_entry = new TextField();
+        ComboBox<String> title_entry = new ComboBox<>();
         title_entry.setStyle(
             "-fx-font-size: 11px;" +
-            "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
+            "-fx-padding: 0px 0px;" +
             "-fx-background-radius: 0px;"
+        );
+        title_entry.getEditor().setStyle(
+            "-fx-border-color: transparent;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-background-insets: 0;" + 
+            "-fx-background-radius: 0px;" +
+            "-fx-border-width: 0px;"
         );
         title_entry.setEditable(true);
         title_entry.setPrefSize(310, 23);
+        title_entry.setMinSize(310, 23);
+        title_entry.setMaxSize(310, 23);
         // DEBIT
         TextField debit_entry = new TextField();
         debit_entry.setStyle(
@@ -173,15 +217,26 @@ public class Acc_cvent {
         credit_entry.setAlignment(Pos.CENTER_RIGHT);   
         credit_entry.setText("0.00");   
         credit_entry.setPrefSize(90, 23);
-        TextField hda_entry = new TextField();
+        // HACIENDA
+        ComboBox<String> hda_entry = new ComboBox<>();
         hda_entry.setStyle(
             "-fx-font-size: 11px;" +
-            "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
+            "-fx-padding: 0px 0px;" +
             "-fx-background-radius: 0px;"
         );
-        hda_entry.setAlignment(Pos.CENTER);   
-        hda_entry.setPrefSize(50, 23); 
+        hda_entry.getEditor().setStyle(
+            "-fx-border-color: transparent;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-background-insets: 0;" + 
+            "-fx-background-radius: 0px;" +
+            "-fx-border-width: 0px;"
+        );
+        hda_entry.getEditor().setAlignment(Pos.CENTER);
+        hda_entry.setEditable(true);      
+        hda_entry.setPrefSize(70, 23); 
+        hda_entry.setMinSize(70, 23); 
+        hda_entry.setMaxSize(70, 23); 
         // EXPLANATION
         TextField explanation_entry = new TextField();
         explanation_entry.setStyle(
@@ -192,14 +247,25 @@ public class Acc_cvent {
         );
         explanation_entry.setPrefSize(350, 23);
         // SUB-CATEGORY
-        TextField sub_entry = new TextField();
+        ComboBox<String> sub_entry = new ComboBox<>();
         sub_entry.setStyle(
             "-fx-font-size: 11px;" +
-            "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
+            "-fx-padding: 0px 0px;" +
             "-fx-background-radius: 0px;"
         );
-        sub_entry.setPrefSize(100, 23);
+        sub_entry.getEditor().setStyle(
+            "-fx-border-color: transparent;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-background-insets: 0;" + 
+            "-fx-background-radius: 0px;" +
+            "-fx-border-width: 0px;"
+        );
+        sub_entry.getEditor().setAlignment(Pos.CENTER);
+        sub_entry.setEditable(true);      
+        sub_entry.setPrefSize(110, 23);
+        sub_entry.setMinSize(110, 23);
+        sub_entry.setMaxSize(110, 23);
 
         //////////////////////////////////////////////////////////////
         // BUTTON WIDGETS                                           //
@@ -235,7 +301,7 @@ public class Acc_cvent {
             "-fx-background-radius: 0px;"
         );
         new_title.setPrefSize(120, 40);
-        new_title.setOnAction(event -> new Acc_addacc().acc());
+        new_title.setOnAction(event -> new Acc_addacc().show());
 
         // VIEW CHECK VOUCHER
         Button view_cv = new Button("View Check Voucher");

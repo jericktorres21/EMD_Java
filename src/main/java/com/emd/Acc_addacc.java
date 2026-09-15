@@ -12,7 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 
 public class Acc_addacc {
-    public void acc() {
+    public void show() {
         //////////////////////////////////////////////////////////////
         // ENTRY WIDGETS                                            //
         //////////////////////////////////////////////////////////////
@@ -68,7 +68,9 @@ public class Acc_addacc {
         nature_entry.getEditor().setStyle(
             "-fx-border-color: transparent;" +
             "-fx-padding: 0px 5px;" +
-            "-fx-background-radius: 0px;"
+            "-fx-background-insets: 0;" + 
+            "-fx-background-radius: 0px;" +
+            "-fx-border-width: 0px;"
         );
         nature_entry.getEditor().setAlignment(Pos.CENTER);
         nature_entry.setEditable(true);         
