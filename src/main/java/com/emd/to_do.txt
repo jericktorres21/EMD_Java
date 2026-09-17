@@ -1,0 +1,2 @@
+- (Acc_cvent) Separate the labels and entryboxes to different boxes
+- (public void entry_boxes()) add .getchildren() for its respective boxes

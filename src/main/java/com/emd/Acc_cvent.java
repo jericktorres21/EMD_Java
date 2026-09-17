@@ -7,9 +7,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.control.ScrollPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.control.ComboBox;
@@ -398,7 +398,7 @@ public class Acc_cvent {
             new_payeebox
         );
         info_box.setAlignment(Pos.TOP_CENTER);
-        // VBox.setMargin(info_box, new Insets(185, 0, 0, 0));
+        VBox.setMargin(info_box, new Insets(185, 0, 0, 0));
 
         //////////////////////////////////////////////////////////////
 
@@ -431,10 +431,6 @@ public class Acc_cvent {
         );
         data_enthbox.setAlignment(Pos.CENTER);
 
-        // ENTRY SCROLLPANE
-        ScrollPane data_entsp = new ScrollPane(data_enthbox);     
-        data_entsp.setPrefSize(1000, 480);
-
         //////////////////////////////////////////////////////////////
         
         // BUTTON VBOX 1
@@ -466,7 +462,7 @@ public class Acc_cvent {
         //////////////////////////////////////////////////////////////
 
         // MAIN BOX
-        VBox mainbox = new VBox(20, info_box, data_entsp, buttonbox);
+        VBox mainbox = new VBox(20, info_box, data_enthbox, buttonbox);
 
         //////////////////////////////////////////////////////////////
 
