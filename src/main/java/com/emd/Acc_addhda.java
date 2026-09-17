@@ -50,9 +50,9 @@ public class Acc_addhda {
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
         );
-        hda_entry.setPrefSize(140, 23);
-        hda_entry.setMinSize(140, 23);
-        hda_entry.setMaxSize(140, 23);
+        hda_entry.setPrefSize(160, 23);
+        hda_entry.setMinSize(160, 23);
+        hda_entry.setMaxSize(160, 23);
         // SHORTCUT
         TextField shortcut_entry = new TextField();
         shortcut_entry.setStyle(
@@ -123,7 +123,7 @@ public class Acc_addhda {
         //////////////////////////////////////////////////////////////
 
         // ADD HACIENDA SCENE
-        Scene addhda_scene = new Scene(mainbox, 350, 400);
+        Scene addhda_scene = new Scene(mainbox, 370, 400);
 
         //////////////////////////////////////////////////////////////  
          

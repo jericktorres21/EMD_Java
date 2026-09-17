@@ -9,11 +9,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.control.ScrollPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.control.ComboBox;
 
 public class Acc_cvent {
+    // INITIALIZE
     public void show(Stage mainstage) {
         //////////////////////////////////////////////////////////////
         // INFO WIDGETS                                             //
@@ -396,7 +398,7 @@ public class Acc_cvent {
             new_payeebox
         );
         info_box.setAlignment(Pos.TOP_CENTER);
-        VBox.setMargin(info_box, new Insets(185, 0, 0, 0));
+        // VBox.setMargin(info_box, new Insets(185, 0, 0, 0));
 
         //////////////////////////////////////////////////////////////
 
@@ -417,7 +419,7 @@ public class Acc_cvent {
         VBox sub_box = new VBox(3, sub, sub_entry);
 
         // DATA ENTRY BOX
-        HBox data_entbox = new HBox(
+        HBox data_enthbox = new HBox(
             5, 
             code_box,
             title_box,
@@ -427,7 +429,11 @@ public class Acc_cvent {
             exp_box,
             sub_box
         );
-        data_entbox.setAlignment(Pos.CENTER);
+        data_enthbox.setAlignment(Pos.CENTER);
+
+        // ENTRY SCROLLPANE
+        ScrollPane data_entsp = new ScrollPane(data_enthbox);     
+        data_entsp.setPrefSize(1000, 480);
 
         //////////////////////////////////////////////////////////////
         
@@ -460,7 +466,7 @@ public class Acc_cvent {
         //////////////////////////////////////////////////////////////
 
         // MAIN BOX
-        VBox mainbox = new VBox(20, info_box, data_entbox, buttonbox);
+        VBox mainbox = new VBox(20, info_box, data_entsp, buttonbox);
 
         //////////////////////////////////////////////////////////////
 
@@ -485,4 +491,101 @@ public class Acc_cvent {
                 }
             });
     }
+
+    // // ENTRY BOXES
+    // public void entry_boxes() {
+    //     // DATE
+    //     TextField date_entry = new TextField();
+    //     date_entry.setStyle(
+    //         "-fx-font-size: 11px;" +
+    //         "-fx-padding: 0px 5px;" +
+    //         "-fx-border-color: #A9A9A9;" +
+    //         "-fx-background-radius: 0px;"
+    //     );
+    //     date_entry.setAlignment(Pos.CENTER);
+    //     date_entry.setPrefSize(90, 23);
+    //     // REAL-TIME DATE FORMATTING
+    //     date_entry.textProperty().addListener((observable, oldValue, newValue) -> {
+    //         // Remove anything that isn't a number
+    //         String numbers = newValue.replaceAll("[^0-9]", "");
+    //         // Maximum of 8 digits: MMddyyyy
+    //         if (numbers.length() > 8) {
+    //             numbers = numbers.substring(0, 8);
+    //         }
+    //         StringBuilder formatted = new StringBuilder();
+    //         for (int i = 0; i < numbers.length(); i++) {
+    //             // Add / before day
+    //             if (i == 2 || i == 4) {
+    //                 formatted.append("/");
+    //             }
+
+    //             formatted.append(numbers.charAt(i));
+    //         }
+    //         // Prevent infinite listener loop
+    //         String result = formatted.toString();
+    //         if (!result.equals(newValue)) {
+    //             date_entry.setText(result);
+    //             date_entry.positionCaret(result.length());
+    //         }
+    //     });
+    //     // CHECK VOUCHER NO.
+    //     TextField cv_numentry = new TextField();
+    //     cv_numentry.setStyle(
+    //         "-fx-font-size: 11px;" +
+    //         "-fx-padding: 0px 5px;" +
+    //         "-fx-border-color: #A9A9A9;" +
+    //         "-fx-background-radius: 0px;"
+    //     );
+    //     cv_numentry.setAlignment(Pos.CENTER);
+    //     cv_numentry.setPrefSize(90, 23);
+    //     // CHECK NO.
+    //     TextField check_entry = new TextField();
+    //     check_entry.setStyle(
+    //         "-fx-font-size: 11px;" +
+    //         "-fx-padding: 0px 5px;" +
+    //         "-fx-border-color: #A9A9A9;" +
+    //         "-fx-background-radius: 0px;"
+    //     );
+    //     check_entry.setAlignment(Pos.CENTER);
+    //     check_entry.setPrefSize(90, 23);
+    //     // CHECK AMOUNT
+    //     TextField check_amtentry = new TextField();
+    //     check_amtentry.setStyle(
+    //         "-fx-font-size: 11px;" +
+    //         "-fx-padding: 0px 5px;" +
+    //         "-fx-border-color: #A9A9A9;" +
+    //         "-fx-background-radius: 0px;"
+    //     );
+    //     check_amtentry.setAlignment(Pos.CENTER);
+    //     check_amtentry.setText("0.00");
+    //     check_amtentry.setPrefSize(90, 23);
+    //     // PAYEE
+    //     ComboBox<String> payee_entry = new ComboBox<>();
+    //     payee_entry.setStyle(
+    //         "-fx-font-size: 11px;" +
+    //         "-fx-border-color: #A9A9A9;" +
+    //         "-fx-padding: 0px 0px;" +
+    //         "-fx-background-radius: 0px;"
+    //     );
+    //     payee_entry.getEditor().setStyle(
+    //         "-fx-border-color: transparent;" +
+    //         "-fx-padding: 0px 5px;" +
+    //         "-fx-background-insets: 0;" + 
+    //         "-fx-background-radius: 0px;" +
+    //         "-fx-border-width: 0px;"
+    //     );
+    //     payee_entry.setEditable(true);
+    //     payee_entry.setPrefSize(350, 23);
+    //     payee_entry.setMinSize(350, 23);
+    //     payee_entry.setMaxSize(350, 23);
+    //     // GENERAL EXPLANATION
+    //     TextField gen_expentry = new TextField();
+    //     gen_expentry.setStyle(
+    //         "-fx-font-size: 11px;" +
+    //         "-fx-padding: 0px 5px;" +
+    //         "-fx-border-color: #A9A9A9;" +
+    //         "-fx-background-radius: 0px;"
+    //     );
+    //     gen_expentry.setPrefSize(350, 23);
+    // }
 }
