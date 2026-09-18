@@ -486,6 +486,9 @@ public class Acc_cvent {
                     mainstage.centerOnScreen();
                 }
             });
+
+        System.out.println(width);
+        System.out.println(height);
     }
 
     // // ENTRY BOXES
