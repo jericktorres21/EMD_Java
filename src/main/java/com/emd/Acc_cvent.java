@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-// import javafx.scene.control.ScrollPane;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
@@ -431,6 +431,8 @@ public class Acc_cvent {
         );
         data_enthbox.setAlignment(Pos.CENTER);
 
+        ScrollPane sp = new ScrollPane(data_enthbox);
+
         //////////////////////////////////////////////////////////////
         
         // BUTTON VBOX 1
@@ -462,7 +464,8 @@ public class Acc_cvent {
         //////////////////////////////////////////////////////////////
 
         // MAIN BOX
-        VBox mainbox = new VBox(20, info_box, data_enthbox, buttonbox);
+        VBox mainbox = new VBox(20, info_box, sp, buttonbox);
+        mainbox.setAlignment(Pos.CENTER);
 
         //////////////////////////////////////////////////////////////
 
@@ -486,9 +489,6 @@ public class Acc_cvent {
                     mainstage.centerOnScreen();
                 }
             });
-
-        System.out.println(width);
-        System.out.println(height);
     }
 
     // // ENTRY BOXES
