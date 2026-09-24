@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -431,7 +432,15 @@ public class Acc_cvent {
         );
         data_enthbox.setAlignment(Pos.CENTER);
 
-        ScrollPane sp = new ScrollPane(data_enthbox);
+        // DATA ENTRY SCROLLPANE
+        ScrollPane dataentry_sp = new ScrollPane(data_enthbox);
+        dataentry_sp.setFitToWidth(true);
+        dataentry_sp.setFitToHeight(true);
+        dataentry_sp.setMinSize(1180, 450);
+        dataentry_sp.setMaxSize(1180, 450);
+
+        // DATA ENTRY STACKPANE
+        StackPane dataentry_spbox = new StackPane(dataentry_sp);
 
         //////////////////////////////////////////////////////////////
         
@@ -464,8 +473,7 @@ public class Acc_cvent {
         //////////////////////////////////////////////////////////////
 
         // MAIN BOX
-        VBox mainbox = new VBox(20, info_box, sp, buttonbox);
-        mainbox.setAlignment(Pos.CENTER);
+        VBox mainbox = new VBox(20, info_box, dataentry_spbox, buttonbox);
 
         //////////////////////////////////////////////////////////////
 
@@ -491,100 +499,109 @@ public class Acc_cvent {
             });
     }
 
-    // // ENTRY BOXES
-    // public void entry_boxes() {
-    //     // DATE
-    //     TextField date_entry = new TextField();
-    //     date_entry.setStyle(
-    //         "-fx-font-size: 11px;" +
-    //         "-fx-padding: 0px 5px;" +
-    //         "-fx-border-color: #A9A9A9;" +
-    //         "-fx-background-radius: 0px;"
-    //     );
-    //     date_entry.setAlignment(Pos.CENTER);
-    //     date_entry.setPrefSize(90, 23);
-    //     // REAL-TIME DATE FORMATTING
-    //     date_entry.textProperty().addListener((observable, oldValue, newValue) -> {
-    //         // Remove anything that isn't a number
-    //         String numbers = newValue.replaceAll("[^0-9]", "");
-    //         // Maximum of 8 digits: MMddyyyy
-    //         if (numbers.length() > 8) {
-    //             numbers = numbers.substring(0, 8);
-    //         }
-    //         StringBuilder formatted = new StringBuilder();
-    //         for (int i = 0; i < numbers.length(); i++) {
-    //             // Add / before day
-    //             if (i == 2 || i == 4) {
-    //                 formatted.append("/");
-    //             }
-
-    //             formatted.append(numbers.charAt(i));
-    //         }
-    //         // Prevent infinite listener loop
-    //         String result = formatted.toString();
-    //         if (!result.equals(newValue)) {
-    //             date_entry.setText(result);
-    //             date_entry.positionCaret(result.length());
-    //         }
-    //     });
-    //     // CHECK VOUCHER NO.
-    //     TextField cv_numentry = new TextField();
-    //     cv_numentry.setStyle(
-    //         "-fx-font-size: 11px;" +
-    //         "-fx-padding: 0px 5px;" +
-    //         "-fx-border-color: #A9A9A9;" +
-    //         "-fx-background-radius: 0px;"
-    //     );
-    //     cv_numentry.setAlignment(Pos.CENTER);
-    //     cv_numentry.setPrefSize(90, 23);
-    //     // CHECK NO.
-    //     TextField check_entry = new TextField();
-    //     check_entry.setStyle(
-    //         "-fx-font-size: 11px;" +
-    //         "-fx-padding: 0px 5px;" +
-    //         "-fx-border-color: #A9A9A9;" +
-    //         "-fx-background-radius: 0px;"
-    //     );
-    //     check_entry.setAlignment(Pos.CENTER);
-    //     check_entry.setPrefSize(90, 23);
-    //     // CHECK AMOUNT
-    //     TextField check_amtentry = new TextField();
-    //     check_amtentry.setStyle(
-    //         "-fx-font-size: 11px;" +
-    //         "-fx-padding: 0px 5px;" +
-    //         "-fx-border-color: #A9A9A9;" +
-    //         "-fx-background-radius: 0px;"
-    //     );
-    //     check_amtentry.setAlignment(Pos.CENTER);
-    //     check_amtentry.setText("0.00");
-    //     check_amtentry.setPrefSize(90, 23);
-    //     // PAYEE
-    //     ComboBox<String> payee_entry = new ComboBox<>();
-    //     payee_entry.setStyle(
-    //         "-fx-font-size: 11px;" +
-    //         "-fx-border-color: #A9A9A9;" +
-    //         "-fx-padding: 0px 0px;" +
-    //         "-fx-background-radius: 0px;"
-    //     );
-    //     payee_entry.getEditor().setStyle(
-    //         "-fx-border-color: transparent;" +
-    //         "-fx-padding: 0px 5px;" +
-    //         "-fx-background-insets: 0;" + 
-    //         "-fx-background-radius: 0px;" +
-    //         "-fx-border-width: 0px;"
-    //     );
-    //     payee_entry.setEditable(true);
-    //     payee_entry.setPrefSize(350, 23);
-    //     payee_entry.setMinSize(350, 23);
-    //     payee_entry.setMaxSize(350, 23);
-    //     // GENERAL EXPLANATION
-    //     TextField gen_expentry = new TextField();
-    //     gen_expentry.setStyle(
-    //         "-fx-font-size: 11px;" +
-    //         "-fx-padding: 0px 5px;" +
-    //         "-fx-border-color: #A9A9A9;" +
-    //         "-fx-background-radius: 0px;"
-    //     );
-    //     gen_expentry.setPrefSize(350, 23);
-    // }
+    // NOTE: TRYING TO USE THE VBOXES FROM THE OBJECT ABOVE
+    // ENTRY BOXES
+    public void entry_boxes() {
+        // CODE
+        TextField code_entry = new TextField();
+        code_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        code_entry.setAlignment(Pos.CENTER);
+        code_entry.setPrefSize(70, 23);
+        // code_box.getChildren().add(code_entry);
+        // ACCOUNT TITLE
+        ComboBox<String> title_entry = new ComboBox<>();
+        title_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-padding: 0px 0px;" +
+            "-fx-background-radius: 0px;"
+        );
+        title_entry.getEditor().setStyle(
+            "-fx-border-color: transparent;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-background-insets: 0;" + 
+            "-fx-background-radius: 0px;" +
+            "-fx-border-width: 0px;"
+        );
+        title_entry.setEditable(true);
+        title_entry.setPrefSize(310, 23);
+        title_entry.setMinSize(310, 23);
+        title_entry.setMaxSize(310, 23);
+        // DEBIT
+        TextField debit_entry = new TextField();
+        debit_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        debit_entry.setAlignment(Pos.CENTER_RIGHT);         
+        debit_entry.setText("0.00");         
+        debit_entry.setPrefSize(90, 23);         
+        // CREDIT
+        TextField credit_entry = new TextField();
+        credit_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        credit_entry.setAlignment(Pos.CENTER_RIGHT);   
+        credit_entry.setText("0.00");   
+        credit_entry.setPrefSize(90, 23);
+        // HACIENDA
+        ComboBox<String> hda_entry = new ComboBox<>();
+        hda_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-padding: 0px 0px;" +
+            "-fx-background-radius: 0px;"
+        );
+        hda_entry.getEditor().setStyle(
+            "-fx-border-color: transparent;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-background-insets: 0;" + 
+            "-fx-background-radius: 0px;" +
+            "-fx-border-width: 0px;"
+        );
+        hda_entry.getEditor().setAlignment(Pos.CENTER);
+        hda_entry.setEditable(true);      
+        hda_entry.setPrefSize(70, 23); 
+        hda_entry.setMinSize(70, 23); 
+        hda_entry.setMaxSize(70, 23); 
+        // EXPLANATION
+        TextField explanation_entry = new TextField();
+        explanation_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        explanation_entry.setPrefSize(350, 23);
+        // SUB-CATEGORY
+        ComboBox<String> sub_entry = new ComboBox<>();
+        sub_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-padding: 0px 0px;" +
+            "-fx-background-radius: 0px;"
+        );
+        sub_entry.getEditor().setStyle(
+            "-fx-border-color: transparent;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-background-insets: 0;" + 
+            "-fx-background-radius: 0px;" +
+            "-fx-border-width: 0px;"
+        );
+        sub_entry.getEditor().setAlignment(Pos.CENTER);
+        sub_entry.setEditable(true);      
+        sub_entry.setPrefSize(110, 23);
+        sub_entry.setMinSize(110, 23);
+        sub_entry.setMaxSize(110, 23);
+    }
 }
