@@ -436,8 +436,8 @@ public class Acc_cvent {
         ScrollPane dataentry_sp = new ScrollPane(data_enthbox);
         dataentry_sp.setFitToWidth(true);
         dataentry_sp.setFitToHeight(true);
-        dataentry_sp.setMinSize(1180, 450);
-        dataentry_sp.setMaxSize(1180, 450);
+        dataentry_sp.setMinSize(1180, 300);
+        dataentry_sp.setMaxSize(1180, 300);
 
         // DATA ENTRY STACKPANE
         StackPane dataentry_spbox = new StackPane(dataentry_sp);
