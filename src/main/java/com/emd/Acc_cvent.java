@@ -271,6 +271,53 @@ public class Acc_cvent {
         sub_entry.setMaxSize(110, 23);
 
         //////////////////////////////////////////////////////////////
+        // SUM/DIFFERENCE WIDGETS                                   //
+        //////////////////////////////////////////////////////////////        
+
+        // DIFFERENCE LABEL
+        Label difference = new Label("Difference:");
+        difference.setStyle("-fx-font-size: 12px;");
+
+        // DIFFERENCE ENTRY BOX
+        TextField diff_entry = new TextField();
+        diff_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        diff_entry.setAlignment(Pos.CENTER);
+        diff_entry.setEditable(false);
+        diff_entry.setText("0.00");
+        diff_entry.setPrefSize(90, 23);    
+
+        // DEBIT SUM ENTRY BOX
+        TextField debit_sum = new TextField();
+        debit_sum.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        debit_sum.setAlignment(Pos.CENTER_RIGHT);
+        debit_sum.setEditable(false);
+        debit_sum.setText("0.00");
+        debit_sum.setPrefSize(90, 23);    
+
+        // CREDIT SUM ENTRY BOX
+        TextField credit_sum = new TextField();
+        credit_sum.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        credit_sum.setAlignment(Pos.CENTER_RIGHT);
+        credit_sum.setEditable(false);
+        credit_sum.setText("0.00");
+        credit_sum.setPrefSize(90, 23);
+
+        //////////////////////////////////////////////////////////////
         // BUTTON WIDGETS                                           //
         //////////////////////////////////////////////////////////////
         
@@ -347,6 +394,14 @@ public class Acc_cvent {
             "-fx-background-radius: 0px;"
         );
         delete_page.setPrefSize(45, 40);
+
+        //////////////////////////////////////////////////////////////
+        // PAGE WIDGETS                                             //
+        //////////////////////////////////////////////////////////////
+
+        // PAGE LABEL
+        Label page = new Label();
+        page.setStyle("-fx-font-size: 12px;");
 
         //////////////////////////////////////////////////////////////
         // VBOX/HBOX/SCENES                                         //
@@ -437,14 +492,24 @@ public class Acc_cvent {
         dataentry_sp.setFitToWidth(true);
         dataentry_sp.setFitToHeight(true);
         dataentry_sp.setMinSize(1180, 300);
-        dataentry_sp.setMaxSize(1180, 300);
+        dataentry_sp.setMaxSize(1180, 300); 
+        dataentry_sp.setStyle("-fx-background-color: #ADD8E6;"); 
 
         // DATA ENTRY STACKPANE
         StackPane dataentry_spbox = new StackPane(dataentry_sp);
 
         //////////////////////////////////////////////////////////////
+
+        // DEBIT-CREDIT SUM BOX
+        HBox sum_box = new HBox(5, debit_sum, credit_sum);
+
+        // PAGE HBOX
+        HBox pagebox = new HBox(5, difference, diff_entry, sum_box);
+        pagebox.setAlignment(Pos.CENTER); 
+
+        //////////////////////////////////////////////////////////////
         
-        // BUTTON VBOX 1
+        // BUTTON HBOX 1
         HBox buttonbox_1 = new HBox(
             4,
             new_hda,
@@ -452,7 +517,7 @@ public class Acc_cvent {
         );
         buttonbox_1.setAlignment(Pos.CENTER);
 
-        // BUTTON VBOX 2
+        // BUTTON HBOX 2
         HBox buttonbox_2 = new HBox(
             4,
             view_cv,
@@ -468,12 +533,12 @@ public class Acc_cvent {
             delete_page
         );
         buttonbox.setAlignment(Pos.CENTER);
-        VBox.setMargin(buttonbox, new Insets(30, 0, 0, 0));
+        VBox.setMargin(buttonbox, new Insets(10, 0, 0, 0));
 
         //////////////////////////////////////////////////////////////
 
         // MAIN BOX
-        VBox mainbox = new VBox(20, info_box, dataentry_spbox, buttonbox);
+        VBox mainbox = new VBox(20, info_box, dataentry_spbox, pagebox, buttonbox);
 
         //////////////////////////////////////////////////////////////
 
@@ -492,7 +557,7 @@ public class Acc_cvent {
         mainstage.maximizedProperty().addListener(
             (observable, wasMaximized, isMaximized) -> {
                 if (!isMaximized) {
-                    mainstage.setWidth(1620);
+                    mainstage.setWidth(1420);
                     mainstage.setHeight(880);
                     mainstage.centerOnScreen();
                 }
