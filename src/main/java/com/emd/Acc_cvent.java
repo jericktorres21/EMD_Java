@@ -289,7 +289,7 @@ public class Acc_cvent {
         diff_entry.setAlignment(Pos.CENTER);
         diff_entry.setEditable(false);
         diff_entry.setText("0.00");
-        diff_entry.setPrefSize(90, 23);    
+        diff_entry.setPrefSize(90, 25);    
 
         // DEBIT SUM ENTRY BOX
         TextField debit_sum = new TextField();
@@ -302,7 +302,7 @@ public class Acc_cvent {
         debit_sum.setAlignment(Pos.CENTER_RIGHT);
         debit_sum.setEditable(false);
         debit_sum.setText("0.00");
-        debit_sum.setPrefSize(90, 23);    
+        debit_sum.setPrefSize(90, 25);    
 
         // CREDIT SUM ENTRY BOX
         TextField credit_sum = new TextField();
@@ -315,7 +315,7 @@ public class Acc_cvent {
         credit_sum.setAlignment(Pos.CENTER_RIGHT);
         credit_sum.setEditable(false);
         credit_sum.setText("0.00");
-        credit_sum.setPrefSize(90, 23);
+        credit_sum.setPrefSize(90, 25);
 
         //////////////////////////////////////////////////////////////
         // BUTTON WIDGETS                                           //
@@ -500,12 +500,18 @@ public class Acc_cvent {
 
         //////////////////////////////////////////////////////////////
 
+        // DIFFERENCE BOX
+        HBox diff_box = new HBox(5, difference, diff_entry);
+        // diff_box.setAlignment(Pos.CENTER); 
+
         // DEBIT-CREDIT SUM BOX
         HBox sum_box = new HBox(5, debit_sum, credit_sum);
+        // sum_box.setAlignment(Pos.CENTER); 
 
         // PAGE HBOX
-        HBox pagebox = new HBox(5, difference, diff_entry, sum_box);
-        pagebox.setAlignment(Pos.CENTER); 
+        HBox pagebox = new HBox(5, diff_box, sum_box);
+        pagebox.setPrefSize(0, 27);
+        pagebox.setAlignment(Pos.CENTER);
 
         //////////////////////////////////////////////////////////////
         
