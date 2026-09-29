@@ -400,8 +400,32 @@ public class Acc_cvent {
         //////////////////////////////////////////////////////////////
 
         // PAGE LABEL
-        Label page = new Label();
+        Label page = new Label("Page");
         page.setStyle("-fx-font-size: 12px;");
+
+        // PAGE NUMBER 1
+        TextField first_num = new TextField();
+        first_num.setStyle(
+            "-fx-font-size: 12px;" +
+            "-fx-padding: 0px 0px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        first_num.setPrefSize(23, 23);
+
+        // OF LABEL
+        Label of = new Label("of");
+        of.setStyle("-fx-font-size: 12px;");
+
+        // PAGE NUMBER 2
+        TextField second_num = new TextField();
+        second_num.setStyle(
+            "-fx-font-size: 12px;" +
+            "-fx-padding: 0px 0px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        second_num.setPrefSize(23, 23);
 
         //////////////////////////////////////////////////////////////
         // VBOX/HBOX/SCENES                                         //
@@ -509,9 +533,9 @@ public class Acc_cvent {
         // sum_box.setAlignment(Pos.CENTER); 
 
         // PAGE HBOX
-        HBox pagebox = new HBox(5, diff_box, sum_box);
-        pagebox.setPrefSize(0, 27);
-        pagebox.setAlignment(Pos.CENTER);
+        HBox sumdiffbox = new HBox(5, diff_box, sum_box);
+        sumdiffbox.setPrefSize(0, 27);
+        sumdiffbox.setAlignment(Pos.CENTER);
 
         //////////////////////////////////////////////////////////////
         
@@ -541,10 +565,23 @@ public class Acc_cvent {
         buttonbox.setAlignment(Pos.CENTER);
         VBox.setMargin(buttonbox, new Insets(10, 0, 0, 0));
 
+        //////////////////////////////////////////////////////////////     
+
+        // PAGEBOX
+        HBpx pagebox = new HBox(5, page, first_num, of, second_num);
+        pagebox.setAlignment(Pos.CENTER);
+
         //////////////////////////////////////////////////////////////
 
         // MAIN BOX
-        VBox mainbox = new VBox(20, info_box, dataentry_spbox, pagebox, buttonbox);
+        VBox mainbox = new VBox(
+            20, 
+            info_box, 
+            dataentry_spbox, 
+            sumdiffbox, 
+            buttonbox,
+            pagebox
+        );
 
         //////////////////////////////////////////////////////////////
 
