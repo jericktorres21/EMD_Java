@@ -412,6 +412,7 @@ public class Acc_cvent {
             "-fx-background-radius: 0px;"
         );
         first_num.setPrefSize(23, 23);
+        first_num.setEditable(false);
 
         // OF LABEL
         Label of = new Label("of");
@@ -426,6 +427,47 @@ public class Acc_cvent {
             "-fx-background-radius: 0px;"
         );
         second_num.setPrefSize(23, 23);
+        second_num.setEditable(false);
+
+        //////////////////////////////////////////////////////////////
+        // PAGE BUTTON WIDGETS                                      //
+        //////////////////////////////////////////////////////////////
+
+        Button first_page = new Button("<<");
+        first_page.setStyle(
+            "-fx-font-size: 12px;" +
+            "-fx-padding: 0px 0px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        first_page.setPrefSize(23, 23); 
+
+        Button back = new Button("<");
+        back.setStyle(
+            "-fx-font-size: 12px;" +
+            "-fx-padding: 0px 0px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        back.setPrefSize(23, 23);
+
+        Button next = new Button(">");
+        next.setStyle(
+            "-fx-font-size: 12px;" +
+            "-fx-padding: 0px 0px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        next.setPrefSize(23, 23);
+
+        Button last_page = new Button(">>");
+        last_page.setStyle(
+            "-fx-font-size: 12px;" +
+            "-fx-padding: 0px 0px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        last_page.setPrefSize(23, 23);       
 
         //////////////////////////////////////////////////////////////
         // VBOX/HBOX/SCENES                                         //
@@ -565,13 +607,34 @@ public class Acc_cvent {
         buttonbox.setAlignment(Pos.CENTER);
         VBox.setMargin(buttonbox, new Insets(10, 0, 0, 0));
 
-        //////////////////////////////////////////////////////////////     
+        //////////////////////////////////////////////////////////////
+        
+        VBox page_vbox = new VBox(page);
+        VBox.setMargin(page_vbox, new Insets(5, 0, 0, 0));
 
-        // PAGEBOX
-        HBpx pagebox = new HBox(5, page, first_num, of, second_num);
-        pagebox.setAlignment(Pos.CENTER);
+        VBox of_vbox = new VBox(of);
+        VBox.setMargin(of_vbox, new Insets(5, 0, 0, 0));
+
+        // PAGE NUMBER BOX
+        HBox pagenum_box = new HBox(5, page_vbox, first_num, of_vbox, second_num);
+
+        // // ADJUST PAGE NUMBER LABELS
+        // VBox.setMargin(page, new Insets(30, 0, 0, 0));
+        // VBox.setMargin(of, new Insets(30, 0, 0, 0));
 
         //////////////////////////////////////////////////////////////
+
+        // PAGE NAVIGATION BOX
+        HBox pagenav_box = new HBox(5, first_page, back, next, last_page);
+
+        //////////////////////////////////////////////////////////////
+
+        // PAGE BOX
+        HBox pagebox = new HBox(30, pagenum_box, pagenav_box);
+        pagebox.setAlignment(Pos.CENTER);
+        VBox.setMargin(pagebox, new Insets(15, 0, 0, 0));
+
+        //////////////////////////////////////////////////////////////        
 
         // MAIN BOX
         VBox mainbox = new VBox(
