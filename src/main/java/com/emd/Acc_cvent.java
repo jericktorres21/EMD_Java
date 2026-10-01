@@ -277,6 +277,7 @@ public class Acc_cvent {
         // DIFFERENCE LABEL
         Label difference = new Label("Difference:");
         difference.setStyle("-fx-font-size: 12px;");
+        difference.setTranslateY(3);
 
         // DIFFERENCE ENTRY BOX
         TextField diff_entry = new TextField();
@@ -402,6 +403,7 @@ public class Acc_cvent {
         // PAGE LABEL
         Label page = new Label("Page");
         page.setStyle("-fx-font-size: 12px;");
+        page.setTranslateY(3);
 
         // PAGE NUMBER 1
         TextField first_num = new TextField();
@@ -417,6 +419,7 @@ public class Acc_cvent {
         // OF LABEL
         Label of = new Label("of");
         of.setStyle("-fx-font-size: 12px;");
+        of.setTranslateY(3);
 
         // PAGE NUMBER 2
         TextField second_num = new TextField();
@@ -568,14 +571,15 @@ public class Acc_cvent {
 
         // DIFFERENCE BOX
         HBox diff_box = new HBox(5, difference, diff_entry);
+        diff_box.setTranslateX(600);
 
         // DEBIT-CREDIT SUM BOX
         HBox sum_box = new HBox(5, debit_sum, credit_sum);
+        sum_box.setTranslateX(615);
 
         // PAGE HBOX
-        HBox sumdiffbox = new HBox(5, diff_box, sum_box);
+        HBox sumdiffbox = new HBox(20, diff_box, sum_box);
         sumdiffbox.setPrefSize(0, 27);
-        sumdiffbox.setAlignment(Pos.CENTER);
 
         //////////////////////////////////////////////////////////////
         
@@ -606,15 +610,9 @@ public class Acc_cvent {
         VBox.setMargin(buttonbox, new Insets(10, 0, 0, 0));
 
         //////////////////////////////////////////////////////////////
-        
-        VBox page_vbox = new VBox(page);
-        VBox.setMargin(page_vbox, new Insets(5, 0, 0, 0));
-
-        VBox of_vbox = new VBox(of);
-        VBox.setMargin(of_vbox, new Insets(5, 0, 0, 0));
 
         // PAGE NUMBER BOX
-        HBox pagenum_box = new HBox(5, page_vbox, first_num, of_vbox, second_num);
+        HBox pagenum_box = new HBox(5, page, first_num, of, second_num);
 
         //////////////////////////////////////////////////////////////
 
