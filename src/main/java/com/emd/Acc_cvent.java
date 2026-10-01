@@ -568,11 +568,9 @@ public class Acc_cvent {
 
         // DIFFERENCE BOX
         HBox diff_box = new HBox(5, difference, diff_entry);
-        // diff_box.setAlignment(Pos.CENTER); 
 
         // DEBIT-CREDIT SUM BOX
         HBox sum_box = new HBox(5, debit_sum, credit_sum);
-        // sum_box.setAlignment(Pos.CENTER); 
 
         // PAGE HBOX
         HBox sumdiffbox = new HBox(5, diff_box, sum_box);
@@ -617,10 +615,6 @@ public class Acc_cvent {
 
         // PAGE NUMBER BOX
         HBox pagenum_box = new HBox(5, page_vbox, first_num, of_vbox, second_num);
-
-        // // ADJUST PAGE NUMBER LABELS
-        // VBox.setMargin(page, new Insets(30, 0, 0, 0));
-        // VBox.setMargin(of, new Insets(30, 0, 0, 0));
 
         //////////////////////////////////////////////////////////////
 
