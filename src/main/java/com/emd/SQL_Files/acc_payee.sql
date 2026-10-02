@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS payee (
+    code SERIAL PRIMARY KEY,
+    payee VARCHAR(100)
+);

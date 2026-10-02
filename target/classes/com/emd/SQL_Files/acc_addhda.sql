@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS addhda (
+    code SERIAL PRIMARY KEY,
+    hda VARCHAR(20),
+    sc VARCHAR(10)
+);

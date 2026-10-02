@@ -16,6 +16,14 @@ import javafx.stage.Stage;
 import javafx.scene.control.ComboBox;
 
 public class Acc_cvent {
+    private VBox code_box;
+    private VBox title_box;
+    private VBox debit_box;
+    private VBox credit_box;
+    private VBox hda_box;
+    private VBox exp_box;
+    private VBox sub_box;
+
     // INITIALIZE
     public void show(Stage mainstage) {
         //////////////////////////////////////////////////////////////
@@ -168,108 +176,6 @@ public class Acc_cvent {
         Label sub = new Label("Sub-Category");
         sub.setStyle("-fx-font-size: 12px;");          
 
-        // DATA ENTRY BOXES
-        // CODE
-        TextField code_entry = new TextField();
-        code_entry.setStyle(
-            "-fx-font-size: 11px;" +
-            "-fx-padding: 0px 5px;" +
-            "-fx-border-color: #A9A9A9;" +
-            "-fx-background-radius: 0px;"
-        );
-        code_entry.setAlignment(Pos.CENTER);
-        code_entry.setPrefSize(70, 23);
-        // ACCOUNT TITLE
-        ComboBox<String> title_entry = new ComboBox<>();
-        title_entry.setStyle(
-            "-fx-font-size: 11px;" +
-            "-fx-border-color: #A9A9A9;" +
-            "-fx-padding: 0px 0px;" +
-            "-fx-background-radius: 0px;"
-        );
-        title_entry.getEditor().setStyle(
-            "-fx-border-color: transparent;" +
-            "-fx-padding: 0px 5px;" +
-            "-fx-background-insets: 0;" + 
-            "-fx-background-radius: 0px;" +
-            "-fx-border-width: 0px;"
-        );
-        title_entry.setEditable(true);
-        title_entry.setPrefSize(310, 23);
-        title_entry.setMinSize(310, 23);
-        title_entry.setMaxSize(310, 23);
-        // DEBIT
-        TextField debit_entry = new TextField();
-        debit_entry.setStyle(
-            "-fx-font-size: 11px;" +
-            "-fx-padding: 0px 5px;" +
-            "-fx-border-color: #A9A9A9;" +
-            "-fx-background-radius: 0px;"
-        );
-        debit_entry.setAlignment(Pos.CENTER_RIGHT);         
-        debit_entry.setText("0.00");         
-        debit_entry.setPrefSize(90, 23);         
-        // CREDIT
-        TextField credit_entry = new TextField();
-        credit_entry.setStyle(
-            "-fx-font-size: 11px;" +
-            "-fx-padding: 0px 5px;" +
-            "-fx-border-color: #A9A9A9;" +
-            "-fx-background-radius: 0px;"
-        );
-        credit_entry.setAlignment(Pos.CENTER_RIGHT);   
-        credit_entry.setText("0.00");   
-        credit_entry.setPrefSize(90, 23);
-        // HACIENDA
-        ComboBox<String> hda_entry = new ComboBox<>();
-        hda_entry.setStyle(
-            "-fx-font-size: 11px;" +
-            "-fx-border-color: #A9A9A9;" +
-            "-fx-padding: 0px 0px;" +
-            "-fx-background-radius: 0px;"
-        );
-        hda_entry.getEditor().setStyle(
-            "-fx-border-color: transparent;" +
-            "-fx-padding: 0px 5px;" +
-            "-fx-background-insets: 0;" + 
-            "-fx-background-radius: 0px;" +
-            "-fx-border-width: 0px;"
-        );
-        hda_entry.getEditor().setAlignment(Pos.CENTER);
-        hda_entry.setEditable(true);      
-        hda_entry.setPrefSize(70, 23); 
-        hda_entry.setMinSize(70, 23); 
-        hda_entry.setMaxSize(70, 23); 
-        // EXPLANATION
-        TextField explanation_entry = new TextField();
-        explanation_entry.setStyle(
-            "-fx-font-size: 11px;" +
-            "-fx-padding: 0px 5px;" +
-            "-fx-border-color: #A9A9A9;" +
-            "-fx-background-radius: 0px;"
-        );
-        explanation_entry.setPrefSize(350, 23);
-        // SUB-CATEGORY
-        ComboBox<String> sub_entry = new ComboBox<>();
-        sub_entry.setStyle(
-            "-fx-font-size: 11px;" +
-            "-fx-border-color: #A9A9A9;" +
-            "-fx-padding: 0px 0px;" +
-            "-fx-background-radius: 0px;"
-        );
-        sub_entry.getEditor().setStyle(
-            "-fx-border-color: transparent;" +
-            "-fx-padding: 0px 5px;" +
-            "-fx-background-insets: 0;" + 
-            "-fx-background-radius: 0px;" +
-            "-fx-border-width: 0px;"
-        );
-        sub_entry.getEditor().setAlignment(Pos.CENTER);
-        sub_entry.setEditable(true);      
-        sub_entry.setPrefSize(110, 23);
-        sub_entry.setMinSize(110, 23);
-        sub_entry.setMaxSize(110, 23);
-
         //////////////////////////////////////////////////////////////
         // SUM/DIFFERENCE WIDGETS                                   //
         //////////////////////////////////////////////////////////////        
@@ -277,7 +183,7 @@ public class Acc_cvent {
         // DIFFERENCE LABEL
         Label difference = new Label("Difference:");
         difference.setStyle("-fx-font-size: 12px;");
-        difference.setTranslateY(3);
+        difference.setTranslateY(4);
 
         // DIFFERENCE ENTRY BOX
         TextField diff_entry = new TextField();
@@ -403,7 +309,7 @@ public class Acc_cvent {
         // PAGE LABEL
         Label page = new Label("Page");
         page.setStyle("-fx-font-size: 12px;");
-        page.setTranslateY(3);
+        page.setTranslateY(4);
 
         // PAGE NUMBER 1
         TextField first_num = new TextField();
@@ -413,13 +319,14 @@ public class Acc_cvent {
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
         );
-        first_num.setPrefSize(23, 23);
+        first_num.setPrefSize(38, 23);
+        first_num.setAlignment(Pos.CENTER);
         first_num.setEditable(false);
 
         // OF LABEL
         Label of = new Label("of");
         of.setStyle("-fx-font-size: 12px;");
-        of.setTranslateY(3);
+        of.setTranslateY(4);
 
         // PAGE NUMBER 2
         TextField second_num = new TextField();
@@ -429,7 +336,8 @@ public class Acc_cvent {
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
         );
-        second_num.setPrefSize(23, 23);
+        second_num.setPrefSize(38, 23);
+        second_num.setAlignment(Pos.CENTER);
         second_num.setEditable(false);
 
         //////////////////////////////////////////////////////////////
@@ -529,20 +437,23 @@ public class Acc_cvent {
 
         // ACC ENTRY WIDGETS
         // CODE BOX
-        VBox code_box = new VBox(3, code, code_entry);
+        code_box = new VBox(3, code);
         // TITLE BOX
-        VBox title_box = new VBox(3, title, title_entry);
+        title_box = new VBox(3, title);
         // DEBIT BOX
-        VBox debit_box = new VBox(3, debit, debit_entry);
+        debit_box = new VBox(3, debit);
         // CREDIT BOX
-        VBox credit_box = new VBox(3, credit, credit_entry);
+        credit_box = new VBox(3, credit);
         // HACIENDA BOX
-        VBox hda_box = new VBox(3, hda, hda_entry);
+        hda_box = new VBox(3, hda);
         // EXPLANATION BOX
-        VBox exp_box = new VBox(3, explanation, explanation_entry);
+        exp_box = new VBox(3, explanation);
         // SUB-CATEGORY BOX
-        VBox sub_box = new VBox(3, sub, sub_entry);
+        sub_box = new VBox(3, sub);
 
+        // ADDITIONAL ENTRY WIDGETS
+        init_entry_boxes();
+            
         // DATA ENTRY BOX
         HBox data_enthbox = new HBox(
             5, 
@@ -560,8 +471,8 @@ public class Acc_cvent {
         ScrollPane dataentry_sp = new ScrollPane(data_enthbox);
         dataentry_sp.setFitToWidth(true);
         dataentry_sp.setFitToHeight(true);
-        dataentry_sp.setMinSize(1180, 300);
-        dataentry_sp.setMaxSize(1180, 300); 
+        dataentry_sp.setMinSize(1180, 305);
+        dataentry_sp.setMaxSize(1180, 305); 
         dataentry_sp.setStyle("-fx-background-color: #ADD8E6;"); 
 
         // DATA ENTRY STACKPANE
@@ -575,7 +486,7 @@ public class Acc_cvent {
 
         // DEBIT-CREDIT SUM BOX
         HBox sum_box = new HBox(5, debit_sum, credit_sum);
-        sum_box.setTranslateX(615);
+        sum_box.setTranslateX(614);
 
         // PAGE HBOX
         HBox sumdiffbox = new HBox(20, diff_box, sum_box);
@@ -607,7 +518,7 @@ public class Acc_cvent {
             delete_page
         );
         buttonbox.setAlignment(Pos.CENTER);
-        VBox.setMargin(buttonbox, new Insets(10, 0, 0, 0));
+        buttonbox.setTranslateY(10);
 
         //////////////////////////////////////////////////////////////
 
@@ -624,7 +535,7 @@ public class Acc_cvent {
         // PAGE BOX
         HBox pagebox = new HBox(30, pagenum_box, pagenav_box);
         pagebox.setAlignment(Pos.CENTER);
-        VBox.setMargin(pagebox, new Insets(15, 0, 0, 0));
+        pagebox.setTranslateY(15);
 
         //////////////////////////////////////////////////////////////        
 
@@ -662,9 +573,8 @@ public class Acc_cvent {
             });
     }
 
-    // NOTE: TRYING TO USE THE VBOXES FROM THE OBJECT ABOVE
     // ENTRY BOXES
-    public void entry_boxes() {
+    public void init_entry_boxes() {
         // CODE
         TextField code_entry = new TextField();
         code_entry.setStyle(
@@ -675,7 +585,7 @@ public class Acc_cvent {
         );
         code_entry.setAlignment(Pos.CENTER);
         code_entry.setPrefSize(70, 23);
-        // code_box.getChildren().add(code_entry);
+        code_box.getChildren().add(code_entry);
         // ACCOUNT TITLE
         ComboBox<String> title_entry = new ComboBox<>();
         title_entry.setStyle(
@@ -695,6 +605,7 @@ public class Acc_cvent {
         title_entry.setPrefSize(310, 23);
         title_entry.setMinSize(310, 23);
         title_entry.setMaxSize(310, 23);
+        title_box.getChildren().add(title_entry);
         // DEBIT
         TextField debit_entry = new TextField();
         debit_entry.setStyle(
@@ -705,7 +616,8 @@ public class Acc_cvent {
         );
         debit_entry.setAlignment(Pos.CENTER_RIGHT);         
         debit_entry.setText("0.00");         
-        debit_entry.setPrefSize(90, 23);         
+        debit_entry.setPrefSize(90, 23);
+        debit_box.getChildren().add(debit_entry);         
         // CREDIT
         TextField credit_entry = new TextField();
         credit_entry.setStyle(
@@ -717,6 +629,7 @@ public class Acc_cvent {
         credit_entry.setAlignment(Pos.CENTER_RIGHT);   
         credit_entry.setText("0.00");   
         credit_entry.setPrefSize(90, 23);
+        credit_box.getChildren().add(credit_entry);
         // HACIENDA
         ComboBox<String> hda_entry = new ComboBox<>();
         hda_entry.setStyle(
@@ -736,7 +649,8 @@ public class Acc_cvent {
         hda_entry.setEditable(true);      
         hda_entry.setPrefSize(70, 23); 
         hda_entry.setMinSize(70, 23); 
-        hda_entry.setMaxSize(70, 23); 
+        hda_entry.setMaxSize(70, 23);
+        hda_box.getChildren().add(hda_entry); 
         // EXPLANATION
         TextField explanation_entry = new TextField();
         explanation_entry.setStyle(
@@ -746,6 +660,7 @@ public class Acc_cvent {
             "-fx-background-radius: 0px;"
         );
         explanation_entry.setPrefSize(350, 23);
+        exp_box.getChildren().add(explanation_entry);
         // SUB-CATEGORY
         ComboBox<String> sub_entry = new ComboBox<>();
         sub_entry.setStyle(
@@ -766,5 +681,6 @@ public class Acc_cvent {
         sub_entry.setPrefSize(110, 23);
         sub_entry.setMinSize(110, 23);
         sub_entry.setMaxSize(110, 23);
+        sub_box.getChildren().add(sub_entry);
     }
 }
