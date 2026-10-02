@@ -11,6 +11,9 @@ import javafx.stage.Stage;
 import javafx.scene.control.Label;
 
 public class Acc_addpayee {
+    private VBox code_box;
+    private VBox payee_box;
+
     public void show() {
         //////////////////////////////////////////////////////////////
         // ENTRY WIDGETS                                            //
@@ -71,17 +74,11 @@ public class Acc_addpayee {
          
         // ENTRY BOXES
         // CODE
-        VBox code_box = new VBox(
-            3,
-            code,
-            code_entry
-        );
+        code_box = new VBox(3, code);
         // TITLE
-        VBox payee_box = new VBox(
-            3,
-            payee,
-            payee_entry 
-        );
+        payee_box = new VBox(3, payee);
+
+        init_entry_boxes();
 
         // MAIN ENTRY BOX
         HBox entry_box = new HBox(3, code_box, payee_box);
@@ -114,5 +111,33 @@ public class Acc_addpayee {
         addpayee_stage.setScene(addpayee_scene);
         addpayee_stage.setTitle("List of Payees");
         addpayee_stage.show();    
+    }
+
+    public void init_entry_boxes() {
+        // CODE
+        TextField code_entry = new TextField();
+        code_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        code_entry.setAlignment(Pos.CENTER);
+        code_entry.setPrefSize(70, 23);
+        code_entry.setMinSize(70, 23);
+        code_entry.setMaxSize(70, 23);
+        code_box.getChildren().add(code_entry);
+        // HACIENDA
+        TextField payee_entry = new TextField();
+        payee_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        payee_entry.setPrefSize(350, 23);
+        payee_entry.setMinSize(350, 23);
+        payee_entry.setMaxSize(350, 23);
+        payee_box.getChildren().add(payee_box);
     }
 }
