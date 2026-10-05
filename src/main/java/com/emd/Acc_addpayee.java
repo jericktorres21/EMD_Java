@@ -27,33 +27,6 @@ public class Acc_addpayee {
         Label payee = new Label("Payee");
         payee.setStyle("-fx-font-size: 12px;");
 
-        //////////////////////////////////////////////////////////////   
-        
-        // ENTRY BOXES
-        // CODE
-        TextField code_entry = new TextField();
-        code_entry.setStyle(
-            "-fx-font-size: 11px;" +
-            "-fx-padding: 0px 5px;" +
-            "-fx-border-color: #A9A9A9;" +
-            "-fx-background-radius: 0px;"
-        );
-        code_entry.setAlignment(Pos.CENTER);
-        code_entry.setPrefSize(70, 23);
-        code_entry.setMinSize(70, 23);
-        code_entry.setMaxSize(70, 23);
-        // HACIENDA
-        TextField payee_entry = new TextField();
-        payee_entry.setStyle(
-            "-fx-font-size: 11px;" +
-            "-fx-padding: 0px 5px;" +
-            "-fx-border-color: #A9A9A9;" +
-            "-fx-background-radius: 0px;"
-        );
-        payee_entry.setPrefSize(350, 23);
-        payee_entry.setMinSize(350, 23);
-        payee_entry.setMaxSize(350, 23);
-
         //////////////////////////////////////////////////////////////
         // ENTRY WIDGETS                                            //
         //////////////////////////////////////////////////////////////
@@ -78,12 +51,13 @@ public class Acc_addpayee {
         // TITLE
         payee_box = new VBox(3, payee);
 
-        init_entry_boxes();
+        // INITIALIZE ENTRY BOXES
+        init_addpayee_eb();
 
         // MAIN ENTRY BOX
         HBox entry_box = new HBox(3, code_box, payee_box);
         entry_box.setAlignment(Pos.CENTER);
-        VBox.setMargin(entry_box, new Insets(20, 0, 0, 0));
+        entry_box.setTranslateY(20);
 
         //////////////////////////////////////////////////////////////
 
@@ -113,7 +87,7 @@ public class Acc_addpayee {
         addpayee_stage.show();    
     }
 
-    public void init_entry_boxes() {
+    private void init_addpayee_eb() {
         // CODE
         TextField code_entry = new TextField();
         code_entry.setStyle(
@@ -138,6 +112,6 @@ public class Acc_addpayee {
         payee_entry.setPrefSize(350, 23);
         payee_entry.setMinSize(350, 23);
         payee_entry.setMaxSize(350, 23);
-        payee_box.getChildren().add(payee_box);
+        payee_box.getChildren().add(payee_entry);
     }
 }

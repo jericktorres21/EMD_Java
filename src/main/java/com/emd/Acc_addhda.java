@@ -135,4 +135,8 @@ public class Acc_addhda {
         addhda_stage.setTitle("List of Haciendas");
         addhda_stage.show();    
     }
+
+    // private void init_entry_boxes() {
+    //     pass;
+    // }
 }

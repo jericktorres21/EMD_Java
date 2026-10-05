@@ -229,7 +229,7 @@ public class Acc_cvent {
         //////////////////////////////////////////////////////////////
         
         // ADD NEW PAYEE
-        Button new_payee = new Button(" ");
+        Button new_payee = new Button("+");
         new_payee.setStyle(
             "-fx-font-size: 12px;" +
             "-fx-padding: 0px 0px;" +
@@ -451,8 +451,8 @@ public class Acc_cvent {
         // SUB-CATEGORY BOX
         sub_box = new VBox(3, sub);
 
-        // ADDITIONAL ENTRY WIDGETS
-        init_entry_boxes();
+        // INITIALIZE ENTRY WIDGETS
+        init_cvent_eb();
             
         // DATA ENTRY BOX
         HBox data_enthbox = new HBox(
@@ -563,18 +563,10 @@ public class Acc_cvent {
         // LOAD ACC CV ENTRY SCENE
         mainstage.setScene(acc_cventscene);
         mainstage.setTitle("Check Voucher Entry");
-        mainstage.maximizedProperty().addListener(
-            (observable, wasMaximized, isMaximized) -> {
-                if (!isMaximized) {
-                    mainstage.setWidth(1420);
-                    mainstage.setHeight(880);
-                    mainstage.centerOnScreen();
-                }
-            });
     }
 
     // ENTRY BOXES
-    public void init_entry_boxes() {
+    private void init_cvent_eb() {
         // CODE
         TextField code_entry = new TextField();
         code_entry.setStyle(
