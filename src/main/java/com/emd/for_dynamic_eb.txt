@@ -1,0 +1,49 @@
+private void addRow(VBox container) {
+
+    HBox row = new HBox(10);
+
+    TextField textField1 = new TextField();
+    TextField textField2 = new TextField();
+
+    ComboBox<String> comboBox = new ComboBox<>();
+    comboBox.getItems().addAll("A", "B", "C");
+
+    row.getChildren().addAll(
+        textField1,
+        comboBox,
+        textField2
+    );
+
+    // This belongs to THIS row only
+    AtomicBoolean rowTriggered = new AtomicBoolean(false);
+
+    Runnable triggerNextRow = () -> {
+        if (!rowTriggered.get()) {
+            rowTriggered.set(true);
+            addRow(container);
+        }
+    };
+
+    // TextField 1
+    textField1.textProperty().addListener((obs, oldValue, newValue) -> {
+        if (!newValue.isBlank()) {
+            triggerNextRow.run();
+        }
+    });
+
+    // TextField 2
+    textField2.textProperty().addListener((obs, oldValue, newValue) -> {
+        if (!newValue.isBlank()) {
+            triggerNextRow.run();
+        }
+    });
+
+    // ComboBox
+    comboBox.valueProperty().addListener((obs, oldValue, newValue) -> {
+        if (newValue != null) {
+            triggerNextRow.run();
+        }
+    });
+
+    container.getChildren().add(row);
+}

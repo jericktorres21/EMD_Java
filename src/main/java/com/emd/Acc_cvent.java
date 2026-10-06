@@ -309,7 +309,7 @@ public class Acc_cvent {
         // PAGE LABEL
         Label page = new Label("Page");
         page.setStyle("-fx-font-size: 12px;");
-        page.setTranslateY(4);
+        page.setTranslateY(3);
 
         // PAGE NUMBER 1
         TextField first_num = new TextField();
@@ -326,7 +326,7 @@ public class Acc_cvent {
         // OF LABEL
         Label of = new Label("of");
         of.setStyle("-fx-font-size: 12px;");
-        of.setTranslateY(4);
+        of.setTranslateY(3);
 
         // PAGE NUMBER 2
         TextField second_num = new TextField();
@@ -453,6 +453,8 @@ public class Acc_cvent {
 
         // INITIALIZE ENTRY WIDGETS
         init_cvent_eb();
+        // DYNAMIC ENTRY WIDGETS
+        cvent_eb();
             
         // DATA ENTRY BOX
         HBox data_enthbox = new HBox(
@@ -652,6 +654,126 @@ public class Acc_cvent {
             "-fx-background-radius: 0px;"
         );
         explanation_entry.setPrefSize(350, 23);
+        exp_box.getChildren().add(explanation_entry);
+        // SUB-CATEGORY
+        ComboBox<String> sub_entry = new ComboBox<>();
+        sub_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-padding: 0px 0px;" +
+            "-fx-background-radius: 0px;"
+        );
+        sub_entry.getEditor().setStyle(
+            "-fx-border-color: transparent;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-background-insets: 0;" + 
+            "-fx-background-radius: 0px;" +
+            "-fx-border-width: 0px;"
+        );
+        sub_entry.getEditor().setAlignment(Pos.CENTER);
+        sub_entry.setEditable(true);      
+        sub_entry.setPrefSize(110, 23);
+        sub_entry.setMinSize(110, 23);
+        sub_entry.setMaxSize(110, 23);
+        sub_box.getChildren().add(sub_entry);
+    }
+
+    private void cvent_eb() {
+        // CODE
+        TextField code_entry = new TextField();
+        code_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        code_entry.setAlignment(Pos.CENTER);
+        code_entry.setPrefSize(70, 23);
+        code_entry.textProperty().addListener((obs, oldValue, newValue) -> {
+            if (oldValue.isEmpty() && !newValue.isEmpty()) {
+                cvent_eb();
+            }
+        });
+        code_box.getChildren().add(code_entry);
+        // ACCOUNT TITLE
+        ComboBox<String> title_entry = new ComboBox<>();
+        title_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-padding: 0px 0px;" +
+            "-fx-background-radius: 0px;"
+        );
+        title_entry.getEditor().setStyle(
+            "-fx-border-color: transparent;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-background-insets: 0;" + 
+            "-fx-background-radius: 0px;" +
+            "-fx-border-width: 0px;"
+        );
+        title_entry.setEditable(true);
+        title_entry.setPrefSize(310, 23);
+        title_entry.setMinSize(310, 23);
+        title_entry.setMaxSize(310, 23);
+        title_box.getChildren().add(title_entry);
+        // DEBIT
+        TextField debit_entry = new TextField();
+        debit_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        debit_entry.setAlignment(Pos.CENTER_RIGHT);         
+        debit_entry.setText("0.00");         
+        debit_entry.setPrefSize(90, 23);
+        debit_box.getChildren().add(debit_entry);         
+        // CREDIT
+        TextField credit_entry = new TextField();
+        credit_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        credit_entry.setAlignment(Pos.CENTER_RIGHT);   
+        credit_entry.setText("0.00");   
+        credit_entry.setPrefSize(90, 23);
+        credit_box.getChildren().add(credit_entry);
+        // HACIENDA
+        ComboBox<String> hda_entry = new ComboBox<>();
+        hda_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-padding: 0px 0px;" +
+            "-fx-background-radius: 0px;"
+        );
+        hda_entry.getEditor().setStyle(
+            "-fx-border-color: transparent;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-background-insets: 0;" + 
+            "-fx-background-radius: 0px;" +
+            "-fx-border-width: 0px;"
+        );
+        hda_entry.getEditor().setAlignment(Pos.CENTER);
+        hda_entry.setEditable(true);      
+        hda_entry.setPrefSize(70, 23); 
+        hda_entry.setMinSize(70, 23); 
+        hda_entry.setMaxSize(70, 23);
+        hda_box.getChildren().add(hda_entry); 
+        // EXPLANATION
+        TextField explanation_entry = new TextField();
+        explanation_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        explanation_entry.setPrefSize(350, 23);
+        explanation_entry.textProperty().addListener((obs, oldValue, newValue) -> {
+            if (oldValue.isEmpty() && !newValue.isEmpty()) {
+                cvent_eb();
+            }
+        });
         exp_box.getChildren().add(explanation_entry);
         // SUB-CATEGORY
         ComboBox<String> sub_entry = new ComboBox<>();
