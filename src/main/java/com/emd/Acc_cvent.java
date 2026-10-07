@@ -63,30 +63,7 @@ public class Acc_cvent {
         );
         date_entry.setAlignment(Pos.CENTER);
         date_entry.setPrefSize(90, 23);
-        // REAL-TIME DATE FORMATTING
-        date_entry.textProperty().addListener((observable, oldValue, newValue) -> {
-            // Remove anything that isn't a number
-            String numbers = newValue.replaceAll("[^0-9]", "");
-            // Maximum of 8 digits: MMddyyyy
-            if (numbers.length() > 8) {
-                numbers = numbers.substring(0, 8);
-            }
-            StringBuilder formatted = new StringBuilder();
-            for (int i = 0; i < numbers.length(); i++) {
-                // Add / before day
-                if (i == 2 || i == 4) {
-                    formatted.append("/");
-                }
 
-                formatted.append(numbers.charAt(i));
-            }
-            // Prevent infinite listener loop
-            String result = formatted.toString();
-            if (!result.equals(newValue)) {
-                date_entry.setText(result);
-                date_entry.positionCaret(result.length());
-            }
-        });
         // CHECK VOUCHER NO.
         TextField cv_numentry = new TextField();
         cv_numentry.setStyle(
