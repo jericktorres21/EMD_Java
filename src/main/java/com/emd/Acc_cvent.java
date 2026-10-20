@@ -774,4 +774,8 @@ public class Acc_cvent {
         sub_entry.setMaxSize(110, 23);
         sub_box.getChildren().add(sub_entry);
     }
+
+    private void check_value() {
+        
+    }
 }
