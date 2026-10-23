@@ -14,8 +14,18 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.control.ComboBox;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Acc_cvent {
+    private List<Row> cvent_arr = new ArrayList<>();
+    private TextField code_entry;
+    private ComboBox<String> title_entry;
+    private TextField debit_entry;
+    private TextField credit_entry;
+    private ComboBox<String> hda_entry;
+    private TextField explanation_entry;
+    private ComboBox<String> sub_entry;  
     private VBox code_box;
     private VBox title_box;
     private VBox debit_box;
@@ -428,10 +438,14 @@ public class Acc_cvent {
         // SUB-CATEGORY BOX
         sub_box = new VBox(3, sub);
 
+        //////////////////////////////////////////////////////////////             
+
         // INITIALIZE ENTRY WIDGETS
         init_cvent_eb();
         // DYNAMIC ENTRY WIDGETS
         cvent_eb();
+
+        //////////////////////////////////////////////////////////////
             
         // DATA ENTRY BOX
         HBox data_enthbox = new HBox(
@@ -547,7 +561,7 @@ public class Acc_cvent {
     // ENTRY BOXES
     private void init_cvent_eb() {
         // CODE
-        TextField code_entry = new TextField();
+        TextField init_code_entry = new TextField();
         code_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
@@ -558,106 +572,106 @@ public class Acc_cvent {
         code_entry.setPrefSize(70, 23);
         code_box.getChildren().add(code_entry);
         // ACCOUNT TITLE
-        ComboBox<String> title_entry = new ComboBox<>();
-        title_entry.setStyle(
+        ComboBox<String> init_title_entry = new ComboBox<>();
+        init_title_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-padding: 0px 0px;" +
             "-fx-background-radius: 0px;"
         );
-        title_entry.getEditor().setStyle(
+        init_title_entry.getEditor().setStyle(
             "-fx-border-color: transparent;" +
             "-fx-padding: 0px 5px;" +
             "-fx-background-insets: 0;" + 
             "-fx-background-radius: 0px;" +
             "-fx-border-width: 0px;"
         );
-        title_entry.setEditable(true);
-        title_entry.setPrefSize(310, 23);
-        title_entry.setMinSize(310, 23);
-        title_entry.setMaxSize(310, 23);
-        title_box.getChildren().add(title_entry);
+        init_title_entry.setEditable(true);
+        init_title_entry.setPrefSize(310, 23);
+        init_title_entry.setMinSize(310, 23);
+        init_title_entry.setMaxSize(310, 23);
+        title_box.getChildren().add(init_title_entry);
         // DEBIT
-        TextField debit_entry = new TextField();
+        TextField init_debit_entry = new TextField();
         debit_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
         );
-        debit_entry.setAlignment(Pos.CENTER_RIGHT);         
-        debit_entry.setText("0.00");         
-        debit_entry.setPrefSize(90, 23);
-        debit_box.getChildren().add(debit_entry);         
+        init_debit_entry.setAlignment(Pos.CENTER_RIGHT);         
+        init_debit_entry.setText("0.00");         
+        init_debit_entry.setPrefSize(90, 23);
+        debit_box.getChildren().add(init_debit_entry);         
         // CREDIT
-        TextField credit_entry = new TextField();
-        credit_entry.setStyle(
+        TextField init_credit_entry = new TextField();
+        init_credit_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
         );
-        credit_entry.setAlignment(Pos.CENTER_RIGHT);   
-        credit_entry.setText("0.00");   
-        credit_entry.setPrefSize(90, 23);
-        credit_box.getChildren().add(credit_entry);
+        init_credit_entry.setAlignment(Pos.CENTER_RIGHT);   
+        init_credit_entry.setText("0.00");   
+        init_credit_entry.setPrefSize(90, 23);
+        credit_box.getChildren().add(init_credit_entry);
         // HACIENDA
-        ComboBox<String> hda_entry = new ComboBox<>();
-        hda_entry.setStyle(
+        ComboBox<String> init_hda_entry = new ComboBox<>();
+        init_hda_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-padding: 0px 0px;" +
             "-fx-background-radius: 0px;"
         );
-        hda_entry.getEditor().setStyle(
+        init_hda_entry.getEditor().setStyle(
             "-fx-border-color: transparent;" +
             "-fx-padding: 0px 5px;" +
             "-fx-background-insets: 0;" + 
             "-fx-background-radius: 0px;" +
             "-fx-border-width: 0px;"
         );
-        hda_entry.getEditor().setAlignment(Pos.CENTER);
-        hda_entry.setEditable(true);      
-        hda_entry.setPrefSize(70, 23); 
-        hda_entry.setMinSize(70, 23); 
-        hda_entry.setMaxSize(70, 23);
-        hda_box.getChildren().add(hda_entry); 
+        init_hda_entry.getEditor().setAlignment(Pos.CENTER);
+        init_hda_entry.setEditable(true);      
+        init_hda_entry.setPrefSize(70, 23); 
+        init_hda_entry.setMinSize(70, 23); 
+        init_hda_entry.setMaxSize(70, 23);
+        hda_box.getChildren().add(init_hda_entry); 
         // EXPLANATION
-        TextField explanation_entry = new TextField();
-        explanation_entry.setStyle(
+        TextField init_explanation_entry = new TextField();
+        init_explanation_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
         );
-        explanation_entry.setPrefSize(350, 23);
-        exp_box.getChildren().add(explanation_entry);
+        init_explanation_entry.setPrefSize(350, 23);
+        exp_box.getChildren().add(init_explanation_entry);
         // SUB-CATEGORY
-        ComboBox<String> sub_entry = new ComboBox<>();
-        sub_entry.setStyle(
+        ComboBox<String> init_sub_entry = new ComboBox<>();
+        init_sub_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-padding: 0px 0px;" +
             "-fx-background-radius: 0px;"
         );
-        sub_entry.getEditor().setStyle(
+        init_sub_entry.getEditor().setStyle(
             "-fx-border-color: transparent;" +
             "-fx-padding: 0px 5px;" +
             "-fx-background-insets: 0;" + 
             "-fx-background-radius: 0px;" +
             "-fx-border-width: 0px;"
         );
-        sub_entry.getEditor().setAlignment(Pos.CENTER);
-        sub_entry.setEditable(true);      
-        sub_entry.setPrefSize(110, 23);
-        sub_entry.setMinSize(110, 23);
-        sub_entry.setMaxSize(110, 23);
-        sub_box.getChildren().add(sub_entry);
+        init_sub_entry.getEditor().setAlignment(Pos.CENTER);
+        init_sub_entry.setEditable(true);      
+        init_sub_entry.setPrefSize(110, 23);
+        init_sub_entry.setMinSize(110, 23);
+        init_sub_entry.setMaxSize(110, 23);
+        sub_box.getChildren().add(init_sub_entry);
     }
 
     private void cvent_eb() {
         // CODE
-        TextField code_entry = new TextField();
+        code_entry = new TextField();
         code_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
@@ -673,7 +687,7 @@ public class Acc_cvent {
         });
         code_box.getChildren().add(code_entry);
         // ACCOUNT TITLE
-        ComboBox<String> title_entry = new ComboBox<>();
+        title_entry = new ComboBox<>();
         title_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-border-color: #A9A9A9;" +
@@ -693,7 +707,7 @@ public class Acc_cvent {
         title_entry.setMaxSize(310, 23);
         title_box.getChildren().add(title_entry);
         // DEBIT
-        TextField debit_entry = new TextField();
+        debit_entry = new TextField();
         debit_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
@@ -705,7 +719,7 @@ public class Acc_cvent {
         debit_entry.setPrefSize(90, 23);
         debit_box.getChildren().add(debit_entry);         
         // CREDIT
-        TextField credit_entry = new TextField();
+        credit_entry = new TextField();
         credit_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
@@ -717,7 +731,7 @@ public class Acc_cvent {
         credit_entry.setPrefSize(90, 23);
         credit_box.getChildren().add(credit_entry);
         // HACIENDA
-        ComboBox<String> hda_entry = new ComboBox<>();
+        hda_entry = new ComboBox<>();
         hda_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-border-color: #A9A9A9;" +
@@ -738,7 +752,7 @@ public class Acc_cvent {
         hda_entry.setMaxSize(70, 23);
         hda_box.getChildren().add(hda_entry); 
         // EXPLANATION
-        TextField explanation_entry = new TextField();
+        explanation_entry = new TextField();
         explanation_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
@@ -753,7 +767,7 @@ public class Acc_cvent {
         });
         exp_box.getChildren().add(explanation_entry);
         // SUB-CATEGORY
-        ComboBox<String> sub_entry = new ComboBox<>();
+        sub_entry = new ComboBox<>();
         sub_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-border-color: #A9A9A9;" +
@@ -775,7 +789,13 @@ public class Acc_cvent {
         sub_box.getChildren().add(sub_entry);
     }
 
-    private void check_value() {
-        
+    private void check_entvalue() {
+        if (cvent_arr.isEmpty()) {
+            return;
+        }
+
+        Row last_ent = cvent_arr.get(last_ent.size() - 1);
+
+        boolean hasValue = !last_ent.ge
     }
 }
