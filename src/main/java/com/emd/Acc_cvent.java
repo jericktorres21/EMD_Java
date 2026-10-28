@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Acc_cvent {
-    private List<Row> cvent_arr = new ArrayList<>();
+    // private List<Row> cvent_arr = new ArrayList<>();
     private TextField code_entry;
     private ComboBox<String> title_entry;
     private TextField debit_entry;
@@ -562,15 +562,15 @@ public class Acc_cvent {
     private void init_cvent_eb() {
         // CODE
         TextField init_code_entry = new TextField();
-        code_entry.setStyle(
+        init_code_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
         );
-        code_entry.setAlignment(Pos.CENTER);
-        code_entry.setPrefSize(70, 23);
-        code_box.getChildren().add(code_entry);
+        init_code_entry.setAlignment(Pos.CENTER);
+        init_code_entry.setPrefSize(70, 23);
+        code_box.getChildren().add(init_code_entry);
         // ACCOUNT TITLE
         ComboBox<String> init_title_entry = new ComboBox<>();
         init_title_entry.setStyle(
@@ -593,7 +593,7 @@ public class Acc_cvent {
         title_box.getChildren().add(init_title_entry);
         // DEBIT
         TextField init_debit_entry = new TextField();
-        debit_entry.setStyle(
+        init_debit_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
@@ -789,13 +789,13 @@ public class Acc_cvent {
         sub_box.getChildren().add(sub_entry);
     }
 
-    private void check_entvalue() {
-        if (cvent_arr.isEmpty()) {
-            return;
-        }
+    // private void check_entvalue() {
+    //     if (cvent_arr.isEmpty()) {
+    //         return;
+    //     }
 
-        Row last_ent = cvent_arr.get(last_ent.size() - 1);
+    //     Row last_ent = cvent_arr.get(last_ent.size() - 1);
 
-        boolean hasValue = !last_ent.ge
-    }
+    //     boolean hasValue = !last_ent.ge
+    // }
 }
