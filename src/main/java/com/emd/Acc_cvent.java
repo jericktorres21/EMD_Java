@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Acc_cvent {
-    // private List<Row> cvent_arr = new ArrayList<>();
     private TextField code_entry;
     private ComboBox<String> title_entry;
     private TextField debit_entry;
