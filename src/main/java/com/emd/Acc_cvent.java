@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.ComboBox;
 
 public class Acc_cvent {
+    // MAIN ENTRY VARIABLES
     private TextField code_entry;
     private ComboBox<String> title_entry;
     private TextField debit_entry;
@@ -30,6 +31,21 @@ public class Acc_cvent {
     private VBox hda_box;
     private VBox exp_box;
     private VBox sub_box;
+    // INIT ENTRY VARIABLES
+    private TextField init_code_entry;
+    private ComboBox<String> init_title_entry;
+    private TextField init_debit_entry;
+    private TextField init_credit_entry;
+    private ComboBox<String> init_hda_entry;
+    private TextField init_explanation_entry;
+    private ComboBox<String> init_sub_entry;  
+    private VBox init_code_box;
+    private VBox init_title_box;
+    private VBox init_debit_box;
+    private VBox init_credit_box;
+    private VBox init_hda_box;
+    private VBox init_exp_box;
+    private VBox init_sub_box; 
 
     // INITIALIZE
     public void show(Stage mainstage) {
@@ -558,7 +574,7 @@ public class Acc_cvent {
     // ENTRY BOXES
     private void init_cvent_eb() {
         // CODE
-        TextField init_code_entry = new TextField();
+        init_code_entry = new TextField();
         init_code_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
@@ -569,7 +585,7 @@ public class Acc_cvent {
         init_code_entry.setPrefSize(70, 23);
         code_box.getChildren().add(init_code_entry);
         // ACCOUNT TITLE
-        ComboBox<String> init_title_entry = new ComboBox<>();
+        init_title_entry = new ComboBox<>();
         init_title_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-border-color: #A9A9A9;" +
@@ -589,7 +605,7 @@ public class Acc_cvent {
         init_title_entry.setMaxSize(310, 23);
         title_box.getChildren().add(init_title_entry);
         // DEBIT
-        TextField init_debit_entry = new TextField();
+        init_debit_entry = new TextField();
         init_debit_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
@@ -601,7 +617,7 @@ public class Acc_cvent {
         init_debit_entry.setPrefSize(90, 23);
         debit_box.getChildren().add(init_debit_entry);         
         // CREDIT
-        TextField init_credit_entry = new TextField();
+        init_credit_entry = new TextField();
         init_credit_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
@@ -613,7 +629,7 @@ public class Acc_cvent {
         init_credit_entry.setPrefSize(90, 23);
         credit_box.getChildren().add(init_credit_entry);
         // HACIENDA
-        ComboBox<String> init_hda_entry = new ComboBox<>();
+        init_hda_entry = new ComboBox<>();
         init_hda_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-border-color: #A9A9A9;" +
@@ -634,7 +650,7 @@ public class Acc_cvent {
         init_hda_entry.setMaxSize(70, 23);
         hda_box.getChildren().add(init_hda_entry); 
         // EXPLANATION
-        TextField init_explanation_entry = new TextField();
+        init_explanation_entry = new TextField();
         init_explanation_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
@@ -644,7 +660,7 @@ public class Acc_cvent {
         init_explanation_entry.setPrefSize(350, 23);
         exp_box.getChildren().add(init_explanation_entry);
         // SUB-CATEGORY
-        ComboBox<String> init_sub_entry = new ComboBox<>();
+        init_sub_entry = new ComboBox<>();
         init_sub_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-border-color: #A9A9A9;" +
