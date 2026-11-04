@@ -14,8 +14,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.control.ComboBox;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Acc_cvent {
     private TextField code_entry;

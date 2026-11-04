@@ -1,0 +1,53 @@
+public void checkEntry() {
+    // SET VARIABLE
+    Row lastRow = rows.get(rows.size() - 1);
+
+    // GET VALUES AND CHECK VALUES
+    boolean hasValue =
+            !lastRow.getCode().trim().isEmpty()
+            || !lastRow.getTitle().trim().isEmpty()
+            || !lastRow.getDebit().equals("0.00")
+            || !lastRow.getCredit().equals("0.00")
+            || !lastRow.getHda().trim().isEmpty()
+            || !lastRow.getExp().trim().isEmpty()
+            || !lastRow.getSub().trim().isEmpty();
+
+    // CHECK VALUES
+    if (hasValue) {
+        addCvent();
+    }
+}
+
+###################################################################################
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EntryManager {
+    private List<Row> rows = new ArrayList<>();
+
+    public void checkEntry() {
+        if (rows.isEmpty()) {
+            return;
+        }
+
+        Row lastRow = rows.get(rows.size() - 1);
+
+        boolean hasValue =
+                !lastRow.getCode().trim().isEmpty()
+                || !lastRow.getTitle().trim().isEmpty()
+                || !lastRow.getDebit().equals("0.00")
+                || !lastRow.getCredit().equals("0.00")
+                || !lastRow.getHda().trim().isEmpty()
+                || !lastRow.getExp().trim().isEmpty()
+                || !lastRow.getSub().trim().isEmpty();
+
+        if (hasValue) {
+            addCvent();
+        }
+    }
+
+    private void addCvent() {
+        // Add your implementation here
+    }
+}
