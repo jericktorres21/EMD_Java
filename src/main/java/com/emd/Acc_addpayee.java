@@ -11,8 +11,12 @@ import javafx.stage.Stage;
 import javafx.scene.control.Label;
 
 public class Acc_addpayee {
+    // VBOXES
     private VBox code_box;
     private VBox payee_box;
+    // INIT ENTRY VARIABLES
+    private TextField init_code_entry;
+    private TextField init_payee_entry;
 
     public void show() {
         //////////////////////////////////////////////////////////////
@@ -89,29 +93,29 @@ public class Acc_addpayee {
 
     private void init_addpayee_eb() {
         // CODE
-        TextField code_entry = new TextField();
-        code_entry.setStyle(
+        init_code_entry = new TextField();
+        init_code_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
         );
-        code_entry.setAlignment(Pos.CENTER);
-        code_entry.setPrefSize(70, 23);
-        code_entry.setMinSize(70, 23);
-        code_entry.setMaxSize(70, 23);
-        code_box.getChildren().add(code_entry);
+        init_code_entry.setAlignment(Pos.CENTER);
+        init_code_entry.setPrefSize(70, 23);
+        init_code_entry.setMinSize(70, 23);
+        init_code_entry.setMaxSize(70, 23);
+        code_box.getChildren().add(init_code_entry);
         // HACIENDA
-        TextField payee_entry = new TextField();
-        payee_entry.setStyle(
+        init_payee_entry = new TextField();
+        init_payee_entry.setStyle(
             "-fx-font-size: 11px;" +
             "-fx-padding: 0px 5px;" +
             "-fx-border-color: #A9A9A9;" +
             "-fx-background-radius: 0px;"
         );
-        payee_entry.setPrefSize(350, 23);
-        payee_entry.setMinSize(350, 23);
-        payee_entry.setMaxSize(350, 23);
-        payee_box.getChildren().add(payee_entry);
+        init_payee_entry.setPrefSize(350, 23);
+        init_payee_entry.setMinSize(350, 23);
+        init_payee_entry.setMaxSize(350, 23);
+        payee_box.getChildren().add(init_payee_entry);
     }
 }

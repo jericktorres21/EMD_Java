@@ -16,14 +16,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.ComboBox;
 
 public class Acc_cvent {
-    // MAIN ENTRY VARIABLES
-    private TextField code_entry;
-    private ComboBox<String> title_entry;
-    private TextField debit_entry;
-    private TextField credit_entry;
-    private ComboBox<String> hda_entry;
-    private TextField explanation_entry;
-    private ComboBox<String> sub_entry;  
+    // VBOXES  
     private VBox code_box;
     private VBox title_box;
     private VBox debit_box;
@@ -46,6 +39,14 @@ public class Acc_cvent {
     private VBox init_hda_box;
     private VBox init_exp_box;
     private VBox init_sub_box; 
+    // MAIN ENTRY VARIABLES
+    private TextField code_entry;
+    private ComboBox<String> title_entry;
+    private TextField debit_entry;
+    private TextField credit_entry;
+    private ComboBox<String> hda_entry;
+    private TextField explanation_entry;
+    private ComboBox<String> sub_entry;
 
     // INITIALIZE
     public void show(Stage mainstage) {

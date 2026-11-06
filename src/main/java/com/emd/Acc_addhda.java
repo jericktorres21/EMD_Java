@@ -11,6 +11,15 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Acc_addhda {
+    // VBOXES
+    private VBox code_box;
+    private VBox hda_box;
+    private VBox shortcut_box;
+    // INIT ENTRY VARIABLES
+    private TextField init_code_entry;
+    private TextField init_hda_entry;
+    private TextField init_shortcut_entry;
+
     public void show() {
         //////////////////////////////////////////////////////////////
         // ENTRY WIDGETS                                            //
@@ -26,45 +35,6 @@ public class Acc_addhda {
         // SHORTCUT
         Label shortcut = new Label("Shortcut");
         shortcut.setStyle("-fx-font-size: 12px;");
-
-        //////////////////////////////////////////////////////////////   
-        
-        // ENTRY BOXES
-        // CODE
-        TextField code_entry = new TextField();
-        code_entry.setStyle(
-            "-fx-font-size: 11px;" +
-            "-fx-padding: 0px 5px;" +
-            "-fx-border-color: #A9A9A9;" +
-            "-fx-background-radius: 0px;"
-        );
-        code_entry.setAlignment(Pos.CENTER);
-        code_entry.setPrefSize(50, 23);
-        code_entry.setMinSize(50, 23);
-        code_entry.setMaxSize(50, 23);
-        // HACIENDA
-        TextField hda_entry = new TextField();
-        hda_entry.setStyle(
-            "-fx-font-size: 11px;" +
-            "-fx-padding: 0px 5px;" +
-            "-fx-border-color: #A9A9A9;" +
-            "-fx-background-radius: 0px;"
-        );
-        hda_entry.setPrefSize(160, 23);
-        hda_entry.setMinSize(160, 23);
-        hda_entry.setMaxSize(160, 23);
-        // SHORTCUT
-        TextField shortcut_entry = new TextField();
-        shortcut_entry.setStyle(
-            "-fx-font-size: 11px;" +
-            "-fx-padding: 0px 5px;" +
-            "-fx-border-color: #A9A9A9;" +
-            "-fx-background-radius: 0px;"
-        );
-        shortcut_entry.setAlignment(Pos.CENTER);
-        shortcut_entry.setPrefSize(70, 23);
-        shortcut_entry.setMinSize(70, 23);
-        shortcut_entry.setMaxSize(70, 23);
 
         //////////////////////////////////////////////////////////////
         // ENTRY WIDGETS                                            //
@@ -86,22 +56,14 @@ public class Acc_addhda {
          
         // ENTRY BOXES
         // CODE
-        VBox code_box = new VBox(
-            3,
-            code,
-            code_entry
-        );
+        code_box = new VBox(3, code);
         // TITLE
-        VBox hda_box = new VBox(
-            3,
-            hda,
-            hda_entry 
-        );
-        VBox shortcut_box = new VBox(
-            3,
-            shortcut,
-            shortcut_entry
-        );
+        hda_box = new VBox(3, hda);
+        // SHORTCUT
+        shortcut_box = new VBox(3, shortcut);
+
+        // INITIALIZE ENTRY WIDGETS
+        init_addhda_eb();
 
         // MAIN ENTRY BOX
         HBox entry_box = new HBox(3, code_box, hda_box, shortcut_box);
@@ -136,7 +98,45 @@ public class Acc_addhda {
         addhda_stage.show();    
     }
 
-    // private void init_entry_boxes() {
-    //     pass;
-    // }
+    private void init_addhda_eb() {
+        // ENTRY BOXES
+        // CODE
+        init_code_entry = new TextField();
+        init_code_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        init_code_entry.setAlignment(Pos.CENTER);
+        init_code_entry.setPrefSize(50, 23);
+        init_code_entry.setMinSize(50, 23);
+        init_code_entry.setMaxSize(50, 23);
+        code_box.getChildren().add(init_code_entry);
+        // HACIENDA
+        init_hda_entry = new TextField();
+        init_hda_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        init_hda_entry.setPrefSize(160, 23);
+        init_hda_entry.setMinSize(160, 23);
+        init_hda_entry.setMaxSize(160, 23);
+        hda_box.getChildren().add(init_hda_entry);
+        // SHORTCUT
+        init_shortcut_entry = new TextField();
+        init_shortcut_entry.setStyle(
+            "-fx-font-size: 11px;" +
+            "-fx-padding: 0px 5px;" +
+            "-fx-border-color: #A9A9A9;" +
+            "-fx-background-radius: 0px;"
+        );
+        init_shortcut_entry.setAlignment(Pos.CENTER);
+        init_shortcut_entry.setPrefSize(70, 23);
+        init_shortcut_entry.setMinSize(70, 23);
+        init_shortcut_entry.setMaxSize(70, 23);
+        shortcut_box.getChildren().add(init_shortcut_entry);
+    }
 }
