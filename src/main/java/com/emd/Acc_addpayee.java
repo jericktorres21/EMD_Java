@@ -17,6 +17,9 @@ public class Acc_addpayee {
     // INIT ENTRY VARIABLES
     private TextField init_code_entry;
     private TextField init_payee_entry;
+    // MAIN ENTRY VARIABLES
+    private TextField code_entry;
+    private TextField payee_entry;
 
     public void show() {
         //////////////////////////////////////////////////////////////

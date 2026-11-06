@@ -19,6 +19,10 @@ public class Acc_addhda {
     private TextField init_code_entry;
     private TextField init_hda_entry;
     private TextField init_shortcut_entry;
+    // MAIN VARIABLES
+    private TextField code_entry;
+    private TextField hda_entry;
+    private TextField shortcut_entry;
 
     public void show() {
         //////////////////////////////////////////////////////////////

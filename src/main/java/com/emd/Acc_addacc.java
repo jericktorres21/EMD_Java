@@ -20,6 +20,10 @@ public class Acc_addacc {
     private TextField init_code_entry;
     private TextField init_title_entry;
     private ComboBox<String> init_nature_entry;
+    // MAIN ENTRY VARIABLES
+    private TextField code_entry;
+    private TextField title_entry;
+    private ComboBox<String> nature_entry;
 
     public void show() {
         //////////////////////////////////////////////////////////////
