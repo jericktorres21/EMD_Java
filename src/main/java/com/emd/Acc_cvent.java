@@ -32,13 +32,6 @@ public class Acc_cvent {
     private ComboBox<String> init_hda_entry;
     private TextField init_explanation_entry;
     private ComboBox<String> init_sub_entry;  
-    private VBox init_code_box;
-    private VBox init_title_box;
-    private VBox init_debit_box;
-    private VBox init_credit_box;
-    private VBox init_hda_box;
-    private VBox init_exp_box;
-    private VBox init_sub_box; 
     // MAIN ENTRY VARIABLES
     private TextField code_entry;
     private ComboBox<String> title_entry;
