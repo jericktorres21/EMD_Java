@@ -1,3 +1,4 @@
 - (Acc_cvent) Separate the labels and entryboxes to different boxes
 - (public void entry_boxes()) add .getchildren() for its respective boxes
-- (Office Screensize) 1920, 1040 
+- (Office Screensize) 1920, 1040
+- (Feature To Add)(Acc_cvent) SSS, Philhealth Monthly Payable Analysis 
