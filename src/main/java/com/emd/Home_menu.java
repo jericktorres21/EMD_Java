@@ -57,5 +57,9 @@ public class Home_menu {
         // LOAD MAIN SCENE
         mainstage.setScene(mainscene);
         mainstage.setTitle("EMD");
+        mainstage.setWidth(1350);
+        mainstage.setHeight(850);
+        mainstage.setResizable(true);
+        mainstage.setMaximized(true);
     }
 }
