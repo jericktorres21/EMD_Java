@@ -17,7 +17,7 @@ import javafx.scene.control.ComboBox;
 
 public class Acc_cvent {
     // VBOXES  
-    private VBox code_box;
+    private VBox code_box; 
     private VBox title_box;
     private VBox debit_box;
     private VBox credit_box;
