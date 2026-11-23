@@ -12,4 +12,4 @@ Accounting
         -
 
 Sugar 
-    -
+    - Track Workers with Daily Rate to avoid rate dispute
